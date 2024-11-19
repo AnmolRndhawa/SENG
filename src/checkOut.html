@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="output.css">
+      
+<style>
+    /* .mainContent{
+        height: 80svh;
+        overflow-y:scroll
+    } */
+</style>
+
+</head>
+
+<body class="bg-gray-100 p-4 lg:p-6">
+    
+    <main class="relative flex flex-col lg:flex-row gap-y-2 lg:gap-x-4">
+        <div id="savingOrderBG" class="absolute hidden justify-center items-center gap-x-4 backdrop-blur-sm bg-white/30 inset-0 z-[999] text-2xl font-PopinsStyle">Order Saved
+            <img class="w-7- h-7" src="images/icons/correct.webp" alt="">
+            <div class="absolute text-white bg-black px-8 py-2 rounded-md bottom-[35%] hover:bg-gray-700"> <button id="OKButton" class="cursor-pointer">Ok</button></div>
+        </div>
+
+        <!-- loading page  -->
+        <!-- loading page  -->
+        
+
+        <!-- .
+    // traking pannel 
+    // traking pannel 
+    // traking pannel  -->
+
+       <div class="bg-white py-6 lg:max-w-[230px] px-4 lg:p-6 lg:ml-6 lg:shadow-md rounded-lg lg:grid lg:grid-cols-[10%_10%-1fr] lg:grid-rows-1 lg:gap-x-8">
+
+        <div class="progressBar hidden lg:col-start-1 lg:inline-block bg-gray-300 min-w-[0.4rem] h-[10%] rounded-xl">
+            .
+
+        </div>
+
+        <ul class="lg:w-full lg:col-start-3 h-full flex lg:flex-col gap-x-8 justify-between">
+            <li id="address-step" class="flex items-center text-black font-PopinsStyle text-sm ">
+                Address <span class="hidden lg:inline-block ml-2">Details</span>
+            </li>
+            <li id="payment-step" class="flex items-center text-gray-400  font-PopinsStyle text-sm">
+                Payment <span class="hidden lg:inline-block ml-2">Method</span>
+            </li>
+            <li id="review-step" class="flex items-center  text-gray-400  font-PopinsStyle text-sm">
+                Order <span class="hidden lg:inline-block ml-2">Summary</span>
+            </li>
+
+        </ul>
+
+       </div>
+
+    <!-- 
+    // traking pannel ends 
+    // traking pannel ends
+    // traking pannel  -->
+
+    <div class="mainContent max-w-[60rem] h-[82svh] lg:h-[90svh] overflow-y-scroll mx-auto lg:mr-4 lg:ml-auto bg-white shadow-md rounded-lg p-4 lg:p-8 flex flex-col gap-y-24">
+
+        <!-- Section 1: Address Details -->
+        <section>
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">1. Shipping Address</h2>
+            <article class="text-[0.6rem] lg:text-xs">By proceeding, I confirm that the address provided is my legal address <Span class="">I acknowledge and agree to comply with all <a class="font-bold underline cursor-pointer" href="#">Terms</a> and Conditions</Span></article>
+            <form action="#"
+            class="space-y-4 mt-4 ">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="col-span-2">
+                        <input type="text" name="fullName" id="fullName" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black" placeholder="Enter full name" require maxlength="15">
+                    </div>
+                    <div class="col-span-2">
+                        <input type="email" name="email" id="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black" placeholder="Enter email address" require minlength="10" maxlength="30">
+                    </div>
+                    <div>
+                        <input type="text" name="state" id="state" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black" placeholder="Enter state" require minlength="10" maxlength="15">
+                    </div>
+                    <div>
+                        <input type="text" name="city" id="city" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black" placeholder="Enter city" require minlength="10" maxlength="16">
+                    </div>
+                    <div>
+                        <label for="areaCode" class="block text-sm font-medium text-gray-600">Area Code</label>
+                        <input type="text" name="areaCode" id="areaCode" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black" placeholder="Eg: 143103" require minlength="10" maxlength="8">
+                    </div>
+                    <div class="col-span-2">
+                        <label for="address" class="block text-sm font-medium text-gray-600">Full Address</label>
+                        <textarea id="address" name="fullAddress" rows="3" class="w-full max-h-[10svh] p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black" placeholder="Enter full address" require minlength="10" maxlength="90"></textarea>
+                    </div>
+                      <div class="buttonSectionInForm w-100 font-PopinsStyle row-start-6 col-start-1 col-end-3 flex gap-x-4 justify-start items-center">
+                          <button type="submit" class="py-2 px-8 sm:px-14 sm:py-4 bg-black rounded-md text-white cursor-pointer">NEXT</button>
+                          <span class="w-100 text-black text-[0.8rem] md:text-base">Agree and continue</span>
+                      </div>
+
+                </div>
+            </form>
+        </section>
+
+        <!-- // addresses section  -->
+        <section id="adressesSec" class="hidden">
+            <div class="relative w-full h-[20svh] rounded-md bg-gray-100 flex flex-col justify-between">
+               <div class="relative w-100 h-[70%]z-9999 overflow-y-scroll">
+                  
+                <div class="addressesItem bg-white shadow-md p-2 flex justify-between"></div>
+   
+               <div class="addressesButton relative cursor-pointer">
+                   <button class="addAdressButton bg-black text-white px-2 py-2 rounded-md">Edit Address</button>
+               </div>
+   
+   
+            </div>
+   
+           </section>
+
+
+        <!-- Section 2: Payment Method -->
+        <section id="paymentSec">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">2. Payment Method</h2>
+            <div class="space-y-4">
+                <div class="flex items-center">
+                    <input type="radio" id="creditDebit" value="Credit / Debit Card" name="paymentMethod" class="paymentOptions h-4 w-4 text-blborder-black focus:ring-blborder-black border-gray-300">
+                    <label for="creditDebit" class="ml-3 text-sm font-medium text-gray-700">Credit / Debit Card</label>
+                </div>
+                <div class="flex items-center">
+                    <input type="radio" id="freeOption" value="Free Option Payment" name="paymentMethod" required class="paymentOptions h-4 w-4 text-blborder-black focus:ring-blborder-black border-gray-300">
+                    <label for="freeOption" class="ml-3 text-sm font-medium text-gray-700">Free Option Payment</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Placeholder -->
+        <section>
+            <p class="text-gray-600 text-[0.6rem] lg:text-xs">I accept the terms and conditions outlined by the platform and confirm that all information is authentic. I am fully prepared to proceed with placing this order..</p>
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">3. Review Your Order</h2>
+            
+            <div class="CheckYourOrder relative flex justify-between p-2 overflow-y-scroll"></div>
+
+            
+            <div class="relative cursor-pointer">
+                <button onclick="window.history.back();" class="EditOrderButton bg-black text-white px-2 py-2 rounded-md">Edit Order</button>
+            </div>
+
+        </section>
+
+        <!-- Submit Button -->
+        <div class="mt-8">
+            <button class="placeOrderButton w-full py-3 bg-black border-black text-white font-semibold rounded-lg shadow-md hover:bg-blborder-black focus:outline-none focus:ring-2 focus:ring-blborder-black focus:ring-offset-2">
+                Place Order
+            </button>
+        </div>
+
+    </div>
+
+
+
+</main> 
+
+<script type="module" src="04-cheakoutPage.js"></script>
+<script src="https://unpkg.com/jspdf-invoice-template@1.4.0/dist/index.js"></script>
+<script type="module" src="addOns/01-pdfjs.js"></script>
+<script>
+
+</script>
+</body>
+</html>

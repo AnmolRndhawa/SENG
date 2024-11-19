@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Summary</title>
+  <link href="output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-4">
+
+    <main class="lg:flex gap-x-2 justify-between items-center">
+        
+  <!-- Cart Items Section -->
+  <section class=" w-[100%] py-4 lg:px-20 lg:py-8 rounded-lg mx-auto lg:m-0">
+    <h2 class="text-2xl font-semibold mb-4 px-4">Shopping Cart</h2>
+     
+    <div class="hidden md:flex justify-center border-b-2">
+      <span class="ml-24 mr-auto">Products</span>
+      <span class="ml-auto">Quantity</span>
+      <span class="ml-40 mr-20">Price</span>
+      
+    </div>
+    <!-- // items in cart div  -->
+    <!-- // items in cart div  -->
+    <!-- // items in cart div  -->
+<div class="cart space-y-2 h-[70svh] overflow-y-scroll"></div>
+
+<!-- // cart footer  -->
+<!-- // cart footer  -->
+
+<div class="flex justify-between px-8 text-sm sm:text-lg">
+  <div>
+    <span class="font-PopinsStyle">Total Products : </span>
+    <span class="totalProducts ml-2 ">9999</span>
+  </div>
+  <div>
+    <span class="font-PopinsStyle">Cart Total : </span>
+    <span class="cartTotal ml-2 ">9999</span>
+  </div>
+</div>
+    
+   
+  </section>
+
+
+
+  
+  <!-- Bill Summary Section -->
+  <section class="bg-white p-4 mt-6 lg:m-0 rounded-lg shadow-md w-full lg:w-[40%] mx-auto">
+    <h2 class="text-2xl font-semibold mb-4">Order Summary</h2>
+    <div class="space-y-2">
+      <!-- Price Details -->
+      <div class="flex justify-between">
+        <span>Cart Total</span>
+        <span class="cartTotal">$89.97</span>
+      </div>
+      <div class="flex justify-between">
+        <span>Taxes 18%(GST)</span>
+        <span id="textCount">$5.00</span>
+      </div>
+      <div class="flex justify-between">
+        <span>Delivery Charges</span>
+        <span id="deliveryCount">Free</span>
+      </div>
+      <div class="border-t border-gray-300 my-2"></div>
+      <div class="flex justify-between font-semibold">
+        <span>Total Price</span>
+        <span id="totalAmount">$101.97</span>
+      </div>
+    </div>
+
+    <!-- Checkout Button -->
+    <button id="proceedToCheckoutButton" class="mt-4 w-full bg-black text-white py-2 rounded-lg hover:bg-gray-700">Proceed to Checkout</button>
+  </section>
+</main>
+
+
+<script type="module" src="03-ordersSummary.js"></script>
+</body>
+</html>
