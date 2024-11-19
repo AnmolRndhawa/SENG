@@ -246,6 +246,6 @@ totalProductsCount = cartProducts.reduce((accmulator, item)=>{
 
     const proceedToCheckoutButton = document.getElementById("proceedToCheckoutButton");
     proceedToCheckoutButton.addEventListener("click",()=>{
-      window.location.href = "checkout.html";
+      window.location.href = "checkOut.html";
 
     });
