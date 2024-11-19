@@ -69,24 +69,24 @@
             class="space-y-4 mt-4 ">
                 <div class="grid grid-cols-2 gap-4">
                     <div class="col-span-2">
-                        <input type="text" name="fullName" id="fullName" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black" placeholder="Enter full name" require maxlength="15">
+                        <input type="text" name="fullName" id="fullName" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black" placeholder="Enter full name" required maxlength="25">
                     </div>
                     <div class="col-span-2">
-                        <input type="email" name="email" id="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black" placeholder="Enter email address" require minlength="10" maxlength="30">
+                        <input type="email" name="email" id="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black" placeholder="Enter email address" required minlength="10" maxlength="30">
                     </div>
                     <div>
-                        <input type="text" name="state" id="state" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black" placeholder="Enter state" require minlength="10" maxlength="15">
+                        <input type="text" name="state" id="state" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black" placeholder="Enter state" required minlength="3" maxlength="15">
                     </div>
                     <div>
-                        <input type="text" name="city" id="city" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black" placeholder="Enter city" require minlength="10" maxlength="16">
+                        <input type="text" name="city" id="city" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black" placeholder="Enter city" required minlength="3" maxlength="16">
                     </div>
                     <div>
                         <label for="areaCode" class="block text-sm font-medium text-gray-600">Area Code</label>
-                        <input type="text" name="areaCode" id="areaCode" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black" placeholder="Eg: 143103" require minlength="10" maxlength="8">
+                        <input type="text" name="areaCode" id="areaCode" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black" placeholder="Eg: 143103" required minlength="4" maxlength="8">
                     </div>
                     <div class="col-span-2">
                         <label for="address" class="block text-sm font-medium text-gray-600">Full Address</label>
-                        <textarea id="address" name="fullAddress" rows="3" class="w-full max-h-[10svh] p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black" placeholder="Enter full address" require minlength="10" maxlength="90"></textarea>
+                        <textarea id="address" name="fullAddress" rows="3" class="w-full max-h-[10svh] p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black" placeholder="Enter full address" required minlength="10" maxlength="90"></textarea>
                     </div>
                       <div class="buttonSectionInForm w-100 font-PopinsStyle row-start-6 col-start-1 col-end-3 flex gap-x-4 justify-start items-center">
                           <button type="submit" class="py-2 px-8 sm:px-14 sm:py-4 bg-black rounded-md text-white cursor-pointer">NEXT</button>
