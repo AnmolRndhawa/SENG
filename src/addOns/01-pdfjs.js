@@ -33,11 +33,23 @@ function generatePdfFunction(){
 
 
 // events 
-placeOrderButton.addEventListener("click",async ()=>{
+placeOrderButton.addEventListener("click",()=>{
+    
+    // view loading page first
+    // view loading page first
+      savingOrderBG.classList.remove("hidden");
+      savingOrderBG.classList.add("flex");
+    savingOrderBG.innerHTML = `<span> Savinng Your Process, Please Wait! </span>`;
+
+
+
+    // logic
+    // logic
+    setTimeout(async () => {
+
     dataToReadyStage();
     console.log(`fullAdress after click : ${checkOutData.formDetails.userAddress}`);
     
-    savingOrderBG.innerHTML = `<span> Savinng Your Process, Please Wait! </span>`;
     
     try{
         await generatePdfFunction();
@@ -50,6 +62,7 @@ placeOrderButton.addEventListener("click",async ()=>{
         savingOrderBG.innerHTML = `<span> Failed! : ${error} </span>
          <button class="OKButton relative cursor-pointer">Go Back</button></div>`;
     }
+},100);
 });    
 
 savingOrderBG.addEventListener("click",(event)=>{
@@ -81,14 +94,14 @@ function generatePDF(){
         outputType: jsPDFInvoiceTemplate.OutputType.Save,
         //Allows for additional configuration prior to writing among others, adds support for different languages and symbols
         returnJsPDFDocObject: true,
-        fileName: "Invoice 2021",
+        fileName: "Invoice(2024-25)",
         orientationLandscape: false,
         compress: true,
         logo: {
-            src: "https://raw.githubusercontent.com/edisonneza/jspdf-invoice-template/demo/images/logo.png",
+            src: "./images/icons/SENG1.png",
             type: 'PNG', //optional, when src= data:uri (nodejs case)
-            width: 53.33, //aspect ratio = width/height
-            height: 26.66,
+            width: 20.33, //aspect ratio = width/height
+            height: 20.33,
             margin: {
                 top: 0, //negative or positive num, from the current position
                 left: 0 //negative or positive num, from the current position

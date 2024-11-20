@@ -25,7 +25,11 @@ if(showMyProducts){
     showMyProducts.addEventListener("click",(event)=>{
 
      let triggerButton = event.target.closest('.orderButton');
-        if(triggerButton){
+        let priceAttribute_String = triggerButton.getAttribute("priceAttribute");
+        let priceAttribute_float = parseFloat(priceAttribute_String);
+        console.log(typeof(priceAttribute_float));
+
+        if(triggerButton && (!isNaN(priceAttribute_float))){
          //getting product id from button dataset
          let productId = triggerButton.dataset.productId;
          console.log(productId);
