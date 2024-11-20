@@ -1,4 +1,5 @@
 const placeOrderButton = document.querySelector('.placeOrderButton');
+const savingOrderBG = document.getElementById('savingOrderBG');
 const OKButton = document.getElementById('OKButton');
 
 
@@ -16,31 +17,56 @@ function dataToReadyStage(){
 
 
 dataToReadyStage();
-console.log(`fullAdress befor click : ${checkOutData.formDetails.userAddress}`);
 
-
+// generate pdf by promise
+// generate pdf by promise
+function generatePdfFunction(){
+    return new Promise((resolve, reject)=>{
+        try{
+            generatePDF();
+            resolve();
+        } catch(error) {
+            reject(error)
+        }
+    });
+}
 
 
 // events 
-placeOrderButton.addEventListener("click",()=>{
+placeOrderButton.addEventListener("click",async ()=>{
     dataToReadyStage();
     console.log(`fullAdress after click : ${checkOutData.formDetails.userAddress}`);
-    console.log("pdf woriking");
-    setTimeout(() => {
-        generatePDF();
-    }, 2000);    
+    
+    savingOrderBG.innerHTML = `<span> Savinng Your Process, Please Wait! </span>`;
+    
+    try{
+        await generatePdfFunction();
+        savingOrderBG.innerHTML = `<span> Your PDF has been generated successfully! </span>
+         <img class="w-7- h-7" src="images/icons/correct.webp" alt="">
+            <div class="absolute text-white bg-black px-8 py-2 rounded-md bottom-[35%] hover:bg-gray-700"> 
+            <button class="OKButton relative cursor-pointer">Ok</button></div>`;
+        
+    } catch (error){
+        savingOrderBG.innerHTML = `<span> Failed! : ${error} </span>
+         <button class="OKButton relative cursor-pointer">Go Back</button></div>`;
+    }
 });    
 
-OKButton.addEventListener("click",()=>{
-    localStorage.removeItem('cartProductsRecord');
-    localStorage.removeItem('finalOrder');
-    localStorage.removeItem('checkoutDataMemory');
+savingOrderBG.addEventListener("click",(event)=>{
 
-    setTimeout(() => {
+   let targetEvent = event.target.closest('.OKButton');
 
-        window.location.href = "../index.html";
-        
-    }, 2000);
+   if(targetEvent){
+       localStorage.removeItem('cartProductsRecord');
+       localStorage.removeItem('finalOrder');
+       localStorage.removeItem('checkoutDataMemory');
+   
+       setTimeout(() => {
+           window.location.href = "../index.html";
+       }, 2000);
+   } else if(!targetEvent){
+    console.log("targetItemNotAvi");
+   }
 });    
 // getting data from local storages
 
