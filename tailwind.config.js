@@ -33,6 +33,26 @@ module.exports = {
         backgroundSize: '200% 100%',
       },
     },
+    infiniteScroll: {
+      '0%': {
+        right: '0',
+      },
+      '25%': {
+        right: '100%',
+      },
+      '50%': {
+        right: '200%',
+      },
+      '75%': {
+        right: '300%',
+      },
+      '90%': {
+        right: '300%',
+      },
+      '100%': {
+        right: '-300%',
+      },
+    },
 
 
     shine: {
@@ -50,7 +70,8 @@ module.exports = {
 
   animation:{
     gradientShine: 'gradientShine 3s ease-in-out infinite',
-        shine: 'shine 1s ease-in-out infinite alternate',
+    shine: 'shine 1s ease-in-out infinite alternate',
+    infiniteScroll: ' infiniteScroll 10s ease-in-out infinite',
   },
 
 }},

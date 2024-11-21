@@ -147,6 +147,82 @@ function openMenu(){
     }
 
 
+
+// carousle items
+// carousle items
+
+let carousleWrapper = document.querySelectorAll('.carousleWrapper');
+
+carousleWrapper.forEach((carousleItem)=>{
+    let productType= carousleItem.dataset.productType;
+    let carousleType= carousleItem.dataset.carousleType;
+    let tempArray = productLog.filter(filterItem => filterItem.description.toLowerCase().includes(productType));
+
+    if(carousleType ==="2"){
+    let tempHtml = displayCarouselProductsFloat(tempArray);
+    carousleItem.innerHTML = tempHtml;
+   }else if(carousleType ==="1"){
+  let tempHtml = displayCarousleProducts(tempArray);
+  carousleItem.innerHTML = tempHtml;
+ }
+
+ });
+
+ function displayCarousleProducts(tempArray){
+    let tempHtml= ""; 
+    tempArray.forEach((item)=>{
+      tempHtml +=`<div class="carousleItem relative min-w-[100%] h-[100%] snap-center overflow-hidden">
+                      <div class=" top-0 left-0 object-center object-cover">
+                          <img class="w-[100%]" src="${item.image}" alt="">
+                      </div>
+                      <div class="pictureData absolute bottom-2 w-[90%] left-1/2 transform -translate-x-1/2 backdrop-blur-md bg-${item.color} rounded-3xl px-4 py-2 text-black">
+                          <h3 class="text-base font-semibold">${item.name}</h3>
+                          <p class="text-[0.7rem] text-gray-300">Explore our full range of premium Apple products.</p>
+                      </div>
+                  </div>`;
+
+
+                });
+                return tempHtml;
+ };
+
+
+//  nextButton carousles
+document.querySelectorAll('.carousles').forEach((item)=>{
+
+    item.addEventListener("click",(event)=>{
+    let targetButton = event.target.closest('.nextButton');
+     if(targetButton){
+        let itemWidth = item.clientWidth;
+
+       let carousleItem = item.querySelector('.carousleWrapper');
+       carousleItem.scrollLeft += itemWidth;
+        
+     }
+});
+
+});
+
+// float carousle
+// float carousle
+function  displayCarouselProductsFloat(tempArray){
+    let tempHtml= ""; 
+    tempArray.forEach((item)=>{
+        const randomTop = Math.floor(Math.random() * 10-2) + 2;
+      tempHtml +=`<div class="carousleItem relative min-w-[25%] h-[50%] snap-center overflow-hidden bg-black shadow-lg flex flex-col justify-between rounded-lg infiniteLoop" style="top:${randomTop}rem; transform: rotate(${randomTop}deg);">
+      <div class="pictureData bottom-2 w-[90%] backdrop-blur-md rounded-3xl px-4 py-2 text-white">
+          <h3 class="text-[0.8rem] font-semibold md:text-6xl">${item.name}</h3>
+      </div>
+     <div class=" top-0 left-0 object-center object-cover md:hidden">
+    <img class="w-[100%]" src="${item.image}" alt=""> </div>
+    </div>`;
+
+
+                });
+                return tempHtml;
+
+}
+
     // showing SubMenu 
     // showing SubMenu
    const blurBgFunction= (actionParam)=>{

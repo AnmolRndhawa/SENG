@@ -109,7 +109,7 @@ and convenience, whether you're working, traveling, or relaxing with your favori
              #purple #watch #smartwatch
              </span> ` ,
             image: "src/images/products/CWATCH2.jpg",
-            color: '#9d7eb3'
+            color: 'white'
           },
           {
             id: "pd-05",

@@ -236,10 +236,7 @@ function PlaceOrderButtonFunction() {
 // when click on the place order button
 
 placeOrderButton.addEventListener("click",()=>{
-
-    document.getElementById('savingOrderBG').classList.remove("hidden");
-    document.getElementById('savingOrderBG').classList.add("flex");
-    
+ 
 
 })
 

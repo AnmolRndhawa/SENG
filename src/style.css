@@ -28,4 +28,28 @@
     animate-gradientShine
     animate-shine 
 }
+.scrollbar-none {
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+.infiniteLoop {
+    position: relative;
+    right:0%;
+    animation: loopAnimate 40s forwards infinite;
+    
+}
+
+
+
+@keyframes loopAnimate {
+    0%, 100% {
+        right: 0%;
+    }
+    50% {
+        right: 200%;
+    }
+
+}
+
+
 /* npx tailwindcss -i ./src/style.css -o ./src/output.css --watch */
