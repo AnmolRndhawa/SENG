@@ -192,11 +192,19 @@ document.querySelectorAll('.carousles').forEach((item)=>{
 
     item.addEventListener("click",(event)=>{
     let targetButton = event.target.closest('.nextButton');
+    let previousButton = event.target.closest('.previousButton');
      if(targetButton){
         let itemWidth = item.clientWidth;
 
        let carousleItem = item.querySelector('.carousleWrapper');
        carousleItem.scrollLeft += itemWidth;
+        
+     }
+     if(previousButton){
+        let itemWidth = item.clientWidth;
+
+       let carousleItem = item.querySelector('.carousleWrapper');
+       carousleItem.scrollLeft += -itemWidth;
         
      }
 });
