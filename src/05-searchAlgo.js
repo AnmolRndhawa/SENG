@@ -99,7 +99,7 @@ function DisplaySearchedItem(tempArray){
 
     tempArray.forEach((item)=>{
         tempHtml += `  
-          <div class="p-4 flex gap-x-4 items-center rounded-md bg-gray-100">
+          <div data-product-id="${item.id}" class="p-4 flex gap-x-4 items-center rounded-md bg-gray-100">
             <div class="relative h-[75px] w-[75px] rounded-xl overflow-hidden">
                 <img src="${item.image.replace("src/","")}" class="h-[100%] w-[100%]" alt="productImgs">
             </div>
@@ -117,3 +117,7 @@ function DisplaySearchedItem(tempArray){
 return tempHtml;
 
 };
+
+
+// open detail
+// open detail
