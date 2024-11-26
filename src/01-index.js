@@ -171,7 +171,7 @@ carousleWrapper.forEach((carousleItem)=>{
  function displayCarousleProducts(tempArray){
     let tempHtml= ""; 
     tempArray.forEach((item)=>{
-      tempHtml +=`<div class="carousleItem relative min-w-[100%] h-[100%] snap-center overflow-hidden">
+      tempHtml +=`<div class="carousleItem searchedItems relative min-w-[100%] h-[100%] snap-center overflow-hidden z-[900]">
                       <div class=" top-0 left-0 object-center object-cover">
                           <img class="w-[100%]" src="${item.image}" alt="">
                       </div>
@@ -179,7 +179,12 @@ carousleWrapper.forEach((carousleItem)=>{
                           <h3 class="text-base font-semibold">${item.name}</h3>
                           <p class="text-[0.7rem] text-gray-300">Explore our full range of premium Apple products.</p>
                       </div>
-                  </div>`;
+
+
+                      <div  data-product-id="${item.id}" priceAttribute="${item.price}" class="buyButtonOnCarousle absolute hidden bg-black/30 inset-0 z-[999]"><button class=" py-2 px-8 m-auto rounded-lg hover:bg-gray-300 bg-gray-100 text-black">BUY</button></div>
+                      </div>
+                      
+                      `;
 
 
                 });
@@ -210,6 +215,45 @@ document.querySelectorAll('.carousles').forEach((item)=>{
 });
 
 });
+
+// buyButtonOnCarousle
+// buyButtonOnCarousle
+
+
+
+const carousleSection = document.querySelector('.carousleSection');
+if (carousleSection) {
+  // Mouseover event
+  carousleSection.addEventListener("mouseover", (event) => {
+    const targetItem = event.target.closest('.carousleItem');
+    if (targetItem) {
+      const buyButtonOnCarousle = targetItem.querySelector('.buyButtonOnCarousle');
+      if (buyButtonOnCarousle) {
+        buyButtonOnCarousle.classList.remove("hidden");
+        buyButtonOnCarousle.classList.add("flex");
+      }
+    }
+  });
+
+  // Mouseout event
+  carousleSection.addEventListener("mouseout", (event) => {
+    const targetItem = event.target.closest('.carousleItem');
+    if (targetItem) {
+      const buyButtonOnCarousle = targetItem.querySelector('.buyButtonOnCarousle');
+      if (buyButtonOnCarousle) {
+        buyButtonOnCarousle.classList.remove("flex");
+        buyButtonOnCarousle.classList.add("hidden");
+      }
+    }
+  });
+
+  // .buyButtonOnCarousle functionality;
+  // .buyButtonOnCarousle functionality;
+
+  
+}
+
+
 
 // float carousle
 // float carousle

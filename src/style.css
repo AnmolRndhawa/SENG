@@ -55,4 +55,13 @@ details summary{
     list-style: none;
 }
 
+/* .buyButtonOnCarousle{
+    display: hidden;
+}
+
+.arousleItem:has(.blur-md) .buyButtonOnCarousle{
+    display: flex;
+} */
+
+
 /* npx tailwindcss -i ./src/style.css -o ./src/output.css --watch */

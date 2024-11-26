@@ -1,4 +1,5 @@
 import { productLog } from "./productsLog.js";
+// import { cartProducts as importedCartProducts } from "./02-cartScript.js";
 
 
 // fiters
@@ -33,6 +34,8 @@ if(filterList){
     });
     
 }
+// getting search from search feild 
+// getting search from search feild 
 let searchInputs = document.querySelectorAll('.searchbarWrapper input');
 
 searchInputs.forEach((searchInputItem) => {
@@ -78,6 +81,7 @@ function getValueFromUrl(parameter){
 const searchedValue = getValueFromUrl("query");
 
 const showSearchResult = document.querySelector('.showSearchResult');
+const applyDelegation = document.querySelector('.applyDelegation');
 
 if(searchedValue){
   
@@ -99,14 +103,14 @@ function DisplaySearchedItem(tempArray){
 
     tempArray.forEach((item)=>{
         tempHtml += `  
-          <div data-product-id="${item.id}" class="p-4 flex gap-x-4 items-center rounded-md bg-gray-100">
+          <div data-product-id="${item.id}" class="searchedItems p-4 flex gap-x-4 items-center rounded-md bg-gray-100 cursor-pointer">
             <div class="relative h-[75px] w-[75px] rounded-xl overflow-hidden">
                 <img src="${item.image.replace("src/","")}" class="h-[100%] w-[100%]" alt="productImgs">
             </div>
             
             <div>
             <h2 class="text-lg font-semibold text-gray-800">${item.name}</h2>
-            <p class="text-gray-900 font-bold mt-4">${item.price}</p>
+            <p class="text-gray-900 font-bold mt-4"> ₹ ${item.price}</p>
             </div>
           </div>`; 
     });
@@ -121,3 +125,91 @@ return tempHtml;
 
 // open detail
 // open detail
+
+// dCardImage
+
+if(applyDelegation){
+
+    applyDelegation.addEventListener("click",(event)=>{
+        let targetItem1 = event.target.closest(".searchedItems");
+        if(targetItem1){
+          let productId =  targetItem1.dataset.productId;
+          showDetailsOf(productId);
+        }
+    });
+}
+
+
+let detailSection = document.querySelector('.detailSection');
+let searchCover = document.querySelector(".searchCover");
+function showDetailsOf(productId){
+    let tempProduct ={};
+    let tempHtml = "";
+    tempProduct = productLog.find((findItem)=>findItem.id===productId);
+
+    tempHtml = `
+    <!-- Close Button -->
+    <div class="flex justify-end">
+      <button class="closeCardButton text-black font-bold hover:text-gray-700">✖</button>
+    </div>
+
+    <!-- Product Picture -->
+    <div class="dCardImage flex justify-center mt-4">
+      <img src="${tempProduct.image.replace("src/","")}" alt="Product Image" class="w-24 h-24 rounded-lg">
+    </div>
+
+    
+    <!-- Product Title -->
+    <div class="text-center mt-4 font-semibold text-lg">
+    <h2>${tempProduct.name}</h2>
+    </div>
+    
+    <!-- Product Description -->
+    <div class="text-center mt-2 text-sm text-gray-700">
+    <span class="w-full">${(tempProduct.description.slice(0,400))}</span>
+    <span> ₹ ${tempProduct.price}</span>
+    </div>
+    
+    <!-- Buy Button -->
+    <div class="flex justify-center mt-6">
+    <button data-product-id = "${tempProduct.id}" priceAttribute="${tempProduct.price}" class="buyFromDetails bg-black text-white rounded-full px-6 py-2 hover:bg-gray-800">
+    Buy Now
+    </button>
+    </div>
+    
+    `;
+
+
+    
+        detailSection.innerHTML = tempHtml;
+        detailSection.classList.remove("hidden");
+        detailSection.classList.add("flex");
+        if(showSearchResult){
+            showSearchResult.classList.add("hidden");
+            searchCover.classList.add("blur");
+            // blur on searchCover
+        
+        }
+    
+};
+
+//closeCardButton
+
+       if(detailSection){
+
+           detailSection.addEventListener("click",(event)=>{
+               let closeCardButton = event.target.closest(".closeCardButton");
+               if(closeCardButton){
+                   
+                   detailSection.classList.remove("flex");
+                   detailSection.classList.add("hidden");
+                   if(showSearchResult){
+       
+                       showSearchResult.classList.remove("hidden");
+                       searchCover.classList.remove("blur");
+                   };
+               }
+           });
+       }
+
+

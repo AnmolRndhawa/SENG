@@ -8,10 +8,11 @@
   <link rel="stylesheet" href="output.css">
 </head>
 <body class="bg-gray-100">
-<main class=" text-gray-800 font-sans overflow-clip">
-  <div class="max-w-6xl mx-auto p-1">
+  
+<main class="text-gray-800 font-sans overflow-clip">
+  <div class="mainT max-w-6xl mx-auto p-1">
     <!-- Main Container -->
-    <div class="flex flex-col gap-y-16">
+    <div class="searchCover flex flex-col gap-y-16">
       
       <!-- First Main Div: Search Bar Section -->
       <div class="searchbarWrapper relative h-[3rem] m-4 flex items-center gap-4 bg-white shadow-lg rounded-xl">
@@ -52,7 +53,7 @@
         </div>
 
         <!-- Results Section -->
-        <div class="showSearchResult w-full h-fit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 grid-flow-row">
+        <div class="showSearchResult applyDelegation re w-full h-fit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 grid-flow-row">
           <!-- Example Product Card -->
     
         </div>
@@ -61,9 +62,15 @@
     </div>
   </div>
 
-  <script type="module" src="05-searchAlgo.js"></script>
+  <!-- // details sections
+  // details sections -->
+
+  <div class="detailSection max-w-3xl hidden absolute inset-0 m-auto bg-white w-[90%] h-[60svh] rounded-lg shadow-lg flex-col p-4 text-black z-[998]"></div>
+
 </main>
 
-    
+
+<script type="module" src="02-cartScript.js"></script>
+<script type="module" src="05-searchAlgo.js"></script>
 </body>
 </html>

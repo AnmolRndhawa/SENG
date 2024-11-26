@@ -650,6 +650,10 @@ video {
   z-index: 99;
 }
 
+.z-\[900\]{
+  z-index: 900;
+}
+
 .col-span-1{
   grid-column: span 1 / span 1;
 }
@@ -1066,6 +1070,10 @@ video {
   min-width: 100%;
 }
 
+.max-w-3xl{
+  max-width: 48rem;
+}
+
 .max-w-6xl{
   max-width: 72rem;
 }
@@ -1080,6 +1088,10 @@ video {
 
 .flex-1{
   flex: 1 1 0%;
+}
+
+.flex-grow-0{
+  flex-grow: 0;
 }
 
 .-translate-x-1\/2{
@@ -1189,6 +1201,10 @@ video {
 
 .justify-start{
   justify-content: flex-start;
+}
+
+.justify-end{
+  justify-content: flex-end;
 }
 
 .justify-center{
@@ -1397,6 +1413,10 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-black\/30{
+  background-color: rgb(0 0 0 / 0.3);
+}
+
 .bg-gray-100{
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -1515,6 +1535,11 @@ video {
 .px-4{
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.px-6{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .px-60{
@@ -1886,6 +1911,14 @@ details summary{
   list-style: none;
 }
 
+/* .buyButtonOnCarousle{
+    display: hidden;
+}
+
+.arousleItem:has(.blur-md) .buyButtonOnCarousle{
+    display: flex;
+} */
+
 /* npx tailwindcss -i ./src/style.css -o ./src/output.css --watch */
 
 .after\:ml-4::after{
@@ -1933,6 +1966,16 @@ details summary{
 .hover\:bg-gray-700:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-gray-800:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+
+.hover\:text-gray-700:hover{
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
 .hover\:text-white:hover{
