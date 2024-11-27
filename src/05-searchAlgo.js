@@ -47,7 +47,7 @@ searchInputs.forEach((searchInputItem) => {
             let currentUrl = window.location.href; 
                if(searchedValue){
                 if(currentUrl.includes("index.html")){
-                    window.location.href = `searchResults.html?query=${encodeURIComponent(searchedValue)}`;
+                    window.location.href = `src/searchResults.html?query=${encodeURIComponent(searchedValue)}`;
                 }else{
                     window.location.href = `searchResults.html?query=${encodeURIComponent(searchedValue)}`;
 
