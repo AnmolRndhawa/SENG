@@ -86,6 +86,9 @@ savingOrderBG.addEventListener("click",(event)=>{
 // getting data from local storages
 
 
+// Set current date dynamically
+const currentDate = new Date().toLocaleDateString();
+
 
 function generatePDF(){
     dataToReadyStage();
@@ -134,7 +137,7 @@ function generatePDF(){
         invoice: {
             label: "Invoice of ",
             num: `rupees : ${cartData.finalPrice.toLocaleString()}`,
-            invDate: "Payment Date: 01/01/2021 18:12",
+            invDate: `Payment Date: ${currentDate}`,
             totalAmount: `${cartData.finalPrice}`,
             paymentMethod: `${checkOutData.paymentMethod}`,
             headerBorder: false,
