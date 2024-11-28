@@ -125,17 +125,11 @@ let carousleWrapper = document.querySelectorAll('.carousleWrapper');
 
 carousleWrapper.forEach((carousleItem)=>{
     let productType= carousleItem.dataset.productType;
-    let carousleType= carousleItem.dataset.carousleType;
+    // let carousleType= carousleItem.dataset.carousleType;
     let tempArray = productLog.filter(filterItem => filterItem.description.toLowerCase().includes(productType));
 
-    if(carousleType ==="2"){
-    let tempHtml = displayCarouselProductsFloat(tempArray);
-    carousleItem.innerHTML = tempHtml;
-   }else if(carousleType ==="1"){
   let tempHtml = displayCarousleProducts(tempArray);
   carousleItem.innerHTML = tempHtml;
- }
-
  });
 
  function displayCarousleProducts(tempArray){
@@ -223,27 +217,6 @@ if (carousleSection) {
   
 }
 
-
-
-// float carousle
-// float carousle
-function  displayCarouselProductsFloat(tempArray){
-    let tempHtml= ""; 
-    tempArray.forEach((item)=>{
-        const randomTop = Math.floor(Math.random() * 10-2) + 2;
-      tempHtml +=`<div class="carousleItem relative min-w-[25%] h-[50%] snap-center overflow-hidden bg-black shadow-lg flex flex-col justify-between rounded-lg infiniteLoop" style="top:${randomTop}rem; transform: rotate(${randomTop}deg);">
-      <div class="pictureData bottom-2 w-[90%] backdrop-blur-md rounded-3xl px-4 py-2 text-white">
-          <h3 class="text-[0.8rem] font-semibold md:text-6xl">${item.name}</h3>
-      </div>
-     <div class=" top-0 left-0 object-center object-cover md:hidden">
-    <img class="w-[100%]" src="${item.image}" alt="img"</div>
-    </div>`;
-
-
-                });
-                return tempHtml;
-
-}
 
    
 
