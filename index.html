@@ -3,12 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pag1</title>
+    <title>SENG-Welcome</title>
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="icon" href="src/images/icons/SENG1.png">
 </head>
-<body>
-    
-   <main>
-       <a href="src/home.html">CLICK ME HOME</a>
-   </main>
-</body>
+<body class="bg-gray-100 ">
+
+    <main class="flex items-center justify-center overflow-hidden">
+
+   
+    <div class="h-screen my-12 flex flex-col items-center">
+      <!-- First Flex Item: Image -->
+      <div class="mx-8 rounded-md w-[80vw] h-[50svh] overflow-hidden">
+        <img id="dynamic-img" src="src/images/banner/punjabiGuy.webp" alt="Shopping Icon" class="rounded-md object-cover object-center w-full h-full">
+      </div>
+  
+      <!-- Second Flex Item: Title -->
+      <div class="mt-6 text-center">
+        <h1 class="text-black text-xl sm:text-4xl font-PopinsStyle font-bold text-start ">
+          Level up your shopping <span class="block">Like never before, with <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-pink-500 to-blue-500">SENG</span></span>
+        </h1>
+      </div>
+  
+      <!-- Third Flex Item: Buttons -->
+      <div class="mt-6 flex gap-4">
+        <a href="src/home.html" class="bg-black text-white px-6 py-2 rounded-3xl hover:bg-gray-800">Get Started</a>
+        <a href="" class="bg-white text-black px-6 py-2 rounded-3xl border border-black hover:bg-gray-100">About Us</a>
+      </div>
+    </div>
+</main>
+
+
+
+  </body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const imageElement = document.getElementById("dynamic-img");
+
+  // Array of image URLs for the slideshow
+  const images = [
+      "src/images/banner/punjabiGuy.webp", // img2
+     "src/images/banner/punjabiWomen.webp", // img1
+  ];
+
+  let currentIndex = 0;
+
+  // Function to change the image with a sweet transition
+  const changeImage = () => {
+    // Fade out the image
+    imageElement.classList.add("animateCover");
+
+    // Wait for the fade-out transition to complete
+    setTimeout(() => {
+      // Update the image source
+      currentIndex = (currentIndex + 1) % images.length; // Loop through images
+      imageElement.src = images[currentIndex];
+      
+
+      // Fade in the new image
+      
+    }, 40); // Match this delay with the Tailwind transition duration (700ms)
+  };
+
+  
+  // Start the slideshow with a setInterval
+  setInterval(changeImage, 4000); // Change image every 3 seconds
+});
+
+</script>
 </html>
+<main>
+</main>
+

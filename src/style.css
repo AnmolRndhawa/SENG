@@ -55,13 +55,20 @@ details summary{
     list-style: none;
 }
 
-/* .buyButtonOnCarousle{
-    display: hidden;
+.animateCover{
+    animation: opacityAnime 3s forwards infinite ;
+
 }
 
-.arousleItem:has(.blur-md) .buyButtonOnCarousle{
-    display: flex;
-} */
+@keyframes opacityAnime {
+    0%,100%{
+        opacity: 100%;
+    }
+    50% {
+        opacity: 0%;
+    }
+    
+}
 
 
 /* npx tailwindcss -i ./src/style.css -o ./src/output.css --watch */
