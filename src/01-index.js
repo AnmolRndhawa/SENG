@@ -1,35 +1,5 @@
 import { productLog } from "./productsLog.js";
 
-//MenuForPhone
-//MenuForPhone
-const menuForPhone = document.getElementById('menuForPhone');
-document.querySelectorAll('.menuForPhoneButton').forEach((btn)=>{
-    btn.addEventListener("click",()=>{
-        openMenu();
-    })
-})
-;
-
-function openMenu(){
-
-    menuForPhone.classList.toggle('hidden');
-    console.log("working!")
-   document.querySelector('main').classList.toggle('hidden');
-
-};
-
-    // menu Hover effect
-    document.querySelectorAll('.js-headerLinks').forEach((linkItem)=>{
-    
-             linkItem.addEventListener("mouseover",()=>{
-                blurBgFunction("add");     
-                 
-   });
-             linkItem.addEventListener("mouseout",()=>{
-                blurBgFunction("remove");     
-                 
-   });
-})
 
     // carousel items 
     const carousel = document.querySelector('.carousel');
@@ -173,7 +143,7 @@ carousleWrapper.forEach((carousleItem)=>{
     tempArray.forEach((item)=>{
       tempHtml +=`<div class="carousleItem searchedItems relative min-w-[100%] h-[100%] snap-center overflow-hidden z-[900]">
                       <div class=" top-0 left-0 object-center object-cover">
-                          <img class="w-[100%]" src="${item.image}" alt="">
+                          <img class="w-[100%]" src="${item.image}" alt="img">
                       </div>
                       <div class="pictureData absolute bottom-2 w-[90%] left-1/2 transform -translate-x-1/2 backdrop-blur-md bg-${item.color} rounded-3xl px-4 py-2 text-black">
                           <h3 class="text-base font-semibold">${item.name}</h3>
@@ -181,7 +151,7 @@ carousleWrapper.forEach((carousleItem)=>{
                       </div>
 
 
-                      <div  data-product-id="${item.id}" priceAttribute="${item.price}" class="buyButtonOnCarousle absolute hidden bg-black/30 inset-0 z-[999]"><button class=" py-2 px-8 m-auto rounded-lg hover:bg-gray-300 bg-gray-100 text-black">BUY</button></div>
+                      <div class="buyButtonOnCarousle absolute hidden bg-black/30 inset-0 z-[999]"><button data-product-id="${item.id}" priceAttribute="${item.price}" class="buyButtonOnCarousle_BUTTON py-2 px-8 m-auto rounded-lg hover:bg-gray-300 bg-gray-100 text-black">BUY</button></div>
                       </div>
                       
                       `;
@@ -266,7 +236,7 @@ function  displayCarouselProductsFloat(tempArray){
           <h3 class="text-[0.8rem] font-semibold md:text-6xl">${item.name}</h3>
       </div>
      <div class=" top-0 left-0 object-center object-cover md:hidden">
-    <img class="w-[100%]" src="${item.image}" alt=""> </div>
+    <img class="w-[100%]" src="${item.image}" alt="img"</div>
     </div>`;
 
 
@@ -275,54 +245,6 @@ function  displayCarouselProductsFloat(tempArray){
 
 }
 
-    // showing SubMenu 
-    // showing SubMenu
-   const blurBgFunction= (actionParam)=>{
-
-       const main = document.querySelector('main');
-       if(actionParam==="add"){
-           main.classList.add("blur-lg");
-        
-       }
-       else if(actionParam==="remove"){
-           main.classList.remove("blur-lg");
-        
-       }
-   }
-
-   //background blur hover on subMenu
    
 
-   document.querySelectorAll('.subMenus').forEach((subMenuItem)=>{
-       subMenuItem.addEventListener("mouseover",()=>{
-         let spanElement = subMenuItem.parentElement.querySelector('span');
-         spanElement.classList.add("visiblespan");
-         blurBgFunction("add");
-        });
-        subMenuItem.addEventListener("mouseout",()=>{
-            let spanElement = subMenuItem.parentElement.querySelector('span');
-         spanElement.classList.remove("visiblespan");
-            blurBgFunction("remove");
-        });
-        subMenuItem.querySelectorAll('.sublinks').forEach((linkItem)=>{
-            linkItem.addEventListener("click",()=>{
-                blurBgFunction("remove");
 
-            });
-
-        });
-    })
-    
-    //background blur hover on headerNavClass
-
-    // proceed button 
-    // proceed button 
-
-    document.querySelector('.cartPannel').addEventListener("click",(event)=>{
-
-        if(event.target.closest(".proceedButton")){
-            console.log("cartButton");
-            window.location.href = "src/orderSummary.html";
-        }
-
-    });

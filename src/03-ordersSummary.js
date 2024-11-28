@@ -22,7 +22,7 @@ cartProducts.forEach((cartItem)=>{
           </div>
           <!-- item2  -->
            <div class="w-24 h-24 rounded-lg overflow-hidden row-start-1 col-start-1 sm:col-start-2">
-             <img src="${cartItem.image.replace("src/","")}" alt="Product Image" class="w-full h-full object-cover bg-black">
+             <img src="${cartItem.image}" alt="Product Image" class="w-full h-full object-cover bg-black">
             </div>
     
           <!-- item3  -->

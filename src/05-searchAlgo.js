@@ -44,14 +44,9 @@ searchInputs.forEach((searchInputItem) => {
             event.preventDefault();
             // const searchedValue = searchInputItem.value.trim() + " " + filterValues;
             const searchedValue = searchInputItem.value.trim();
-            let currentUrl = window.location.href; 
                if(searchedValue){
-                if(currentUrl.includes("index.html")){
-                    window.location.href = `src/searchResults.html?query=${encodeURIComponent(searchedValue)}`;
-                }else{
                     window.location.href = `searchResults.html?query=${encodeURIComponent(searchedValue)}`;
-
-                }
+               
                };
 
             // searchedItem(searchInputItem.value);
@@ -59,6 +54,30 @@ searchInputs.forEach((searchInputItem) => {
 
         }
     });
+    
+// let searchInputs = document.querySelectorAll('.searchbarWrapper input');
+
+// searchInputs.forEach((searchInputItem) => {
+//     searchInputItem.addEventListener("keydown", (event) => {
+//         if (event.key === "Enter") { // Correct key name is "Enter"
+//             event.preventDefault();
+//             // const searchedValue = searchInputItem.value.trim() + " " + filterValues;
+//             const searchedValue = searchInputItem.value.trim();
+//             let currentUrl = window.location.href; 
+//                if(searchedValue){
+//                 if(currentUrl.includes("index.html")){
+//                     window.location.href = `src/searchResults.html?query=${encodeURIComponent(searchedValue)}`;
+//                 }else{
+//                     window.location.href = `searchResults.html?query=${encodeURIComponent(searchedValue)}`;
+
+//                 }
+//                };
+
+//             // searchedItem(searchInputItem.value);
+//             // console.log("workingEvent");
+
+//         }
+//     });
     
 });
 
@@ -105,7 +124,7 @@ function DisplaySearchedItem(tempArray){
         tempHtml += `  
           <div data-product-id="${item.id}" class="searchedItems p-4 flex gap-x-4 items-center rounded-md bg-gray-100 cursor-pointer">
             <div class="relative h-[75px] w-[75px] rounded-xl overflow-hidden">
-                <img src="${item.image.replace("src/","")}" class="h-[100%] w-[100%]" alt="productImgs">
+                <img src="${item.image}" class="h-[100%] w-[100%]" alt="">
             </div>
             
             <div>
@@ -155,7 +174,7 @@ function showDetailsOf(productId){
 
     <!-- Product Picture -->
     <div class="dCardImage flex justify-center mt-4">
-      <img src="${tempProduct.image.replace("src/","")}" alt="Product Image" class="w-24 h-24 rounded-lg">
+      <img src="${tempProduct.image}" alt="img" class="w-24 h-24 rounded-lg">
     </div>
 
     
@@ -213,3 +232,4 @@ function showDetailsOf(productId){
        }
 
 
+     

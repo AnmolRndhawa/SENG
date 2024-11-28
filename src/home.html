@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENG/Home</title>
+    <link rel="stylesheet" href="output.css">
+    <style>
+        #searchBar input[type="search"]::-webkit-search-cancel-button{
+            -webkit-appearance: none;
+            appearance: none;
+
+        }
+        .visiblespan::after{
+          opacity: 1;
+        }
+        .cartPannel{
+            transition:0.5s ease-out;
+        }
+      
+        
+    </style>
+</head>
+<body>
+    <header class="z-100">
+</header>
+<!-- // cart pannel  -->
+<div class="cartPannel fixed h-full w-[80%] md:w-[30%] backdrop-blur-sm bg-white/90 z-[999] top-0 right-[-100%] p-4">
+     <!-- cart header  -->
+    <div class="cartHeader flex gap-8 items-center border-b-2">
+        <div data-action="open" class="cartButton icon mr-0 bg-white  h-8 w-8 rounded-3xl">
+            <img  src="images/icons/cross-svgrepo-com.svg" type="svg" alt="img">
+           
+        </div>
+
+        <span class="text-black font-PopinsStyle ">Cart Preview</span>
+    </div>
+     
+    <!-- cart body  -->
+    <div class="relative h-[75%] px-4 py-8 overflow-y-scroll">
+  
+
+        <div class="cartItemsDiv flex flex-col gap-y-12"></div>
+    </div>
+
+ <!-- card bottom  -->
+<div class="cartBottom grid grid-rows-2 grid-cols-2 gap-y-4 px-2 py-4 border-t-2">
+
+    <div class="font-PopinsStyle font-light text-sm row-span-1 col-span-1">
+        Total Amount : 
+        <span class="cartTotalAmount block text-sm text-center">9999</span>
+        
+    </div>
+    <div class="font-PopinsStyle font-light text-sm row-span-1 col-span-1">
+        Total Products : 
+        <span class="cartTotalProduct block text-sm text-center">9999</span>
+        
+    </div>
+
+    <button class="proceedButton row-span-1 col-span-2 border-2 rounded-xl text-white bg-black">PROCEED</button>
+
+
+
+
+</div> 
+
+</div>
+
+<!-- //cart massages  -->
+
+<div class="notiFyMe fixed hidden gap-x-4 h-11 w-[80%] md:w-[30%] z-[999] top-[86%] left-[10%] md:left-[35%] border-[2px] rounded-xl bg-white shadow-green-500/30 shadow-xl overflow-hidden">
+    <div class=" relitive h-full w-12 bg-green-400 overflow-hidden content-center">
+        <img class="h-[60%] w-full" src="images/icons/check-double.svg" type="svg" alt="img">
+    </div>
+    <div class="font-bold font-PopinsStyle text-sm content-center">Item <span class="massageAction">Added!</span></div>
+</div>
+
+
+<!-- // main  -->
+<!-- // main  -->
+    
+    <main data-visibility="true" class="flex flex-col gap-y-10 md:gap-y-20 overflow-clip">
+  
+        <!-- searchBar -->
+        <!-- searchBar -->
+
+         <div class="searchbarWrapper h-[100svh] relative bg-white mt-16 mb-4  md:mx-16 flex flex-col items-center justify-center overflow-clip">
+            <p class="absolute inset-0 mt-20 text-center text-xl md:text-2xl font-PopinsStyle font-bold text-gray-500">Live Smart, Shop Smarter! with <span class="block text-3xl md:text-6xl font-black bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">SENG</span></p>
+            <div id="searchBar" 
+        class="  min-h-16 flex items-center justify-cente mt-48">
+        <input class="searchInput px-8 py-2 md:px-10 md:py-4 text-center rounded-3xl border-2 focus:outline-none z-10 " type="search" placeholder="Search..">
+        
+    </div>
+
+    <div data-product-type="" data-carousle-type="2" class="carousleWrapper h-[50%] flex gap-x-2 w-[180vw] select-none scrollbar-none grayscale opacity-[10%]">.</div>
+    
+</div>
+    <!-- searchBar -->
+    <!-- searchBar -->
+
+    <!-- Categories Options  -->
+    <!-- Categories Options  -->
+     <section class="categoriesSec flex flex-col gap-y-2 md:gap-y-12 md:px-8 overflow-hidden px-4">
+         <span class="font-PopinsStyle font-semibold text-lg md:text-5xl">Categories</span>
+
+         <div class="carousel w-fit flex justify-start border-2 rounded-3xl gap-x-4 md:gap-x-8 lg:gap-x-20 overflow-x-scroll scroll-smooth snap-mandatory md:overflow-hidden"></div>
+        
+        </section>
+        
+        
+        <!-- Categories  -->
+        <!-- Categories  -->
+        
+        <!--Popular Items-->
+        <section id="fanFavSec" class="fanFavSec flex flex-col gap-2 my-8 px-4 md:px-8 min-h-[80svh]">
+            <span class="font-PopinsStyle text-lg pl-4">Popular Picks You’ll Love!</span>
+            <div data-product-type="popular" class="showMyProducts h-fit grid gap-4 grid-cols-2 grid-rows-[400px] auto-rows-[400px] md:grid-cols-3 lg:grid-cols-4 md:grid-rows-[80svh] md:auto-rows-[80svh] grid-flow-row">
+                
+                
+                
+                
+            </div>
+        </section>
+        <!--Popular Items-->
+        <p class="px-4 md:px-8 font-PopinsStyle font-semibold text-lg md:text-4xl text-gray-600 ">featuring<span class="block md:inline-block md:px-4 text-black">Exclusive Selection</span></p>
+        <section class="carousleSection h-fit px-4 py-4 md:px-8 flex flex-col md:flex-row gap-y-10 md:gap-y-15">
+
+          
+
+            <div  class="carousles relative max-w-xl h-[60svh] mx-auto bg-gray-200 rounded-3xl overflow-clip scroll-smooth scrollbar-none scrollbar-none shadow-lg flex-grow-0">
+                    <div class="flex justify-center items-center h-[100%]">
+                        <div class="bg-gray-200 w-[98%] h-full flex flex-col justify-between pt-2 pb-0 overflow-hidden">
+                            <!-- Header Section -->
+                            <div class="flex items-center justify-between px-4 bg-gray-200">
+                                <!-- First flex item: Rounded button with gallery icon -->
+                                <button class="previousButton items-center justify-center p-2 bg-white text-black rounded-full rotate-[90deg]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                
+                                <!-- Second flex item: Title, Current Date, Company Name -->
+                                <div class="text-center space-y-1">
+                                    <h2 class="text-lg font-semibold font-PopinsStyle">Feautring</h2>
+                                    <div class="flex justify-center space-x-3">
+                                        <span class="text-sm text-gray-600" id="current-date"></span>
+                                        <span class="text-sm text-gray-600">Apple</span>
+                                    </div>
+                                </div>
+                
+                                <!-- Third flex item: Rounded button with arrow icon -->
+                                <button class="nextButton flex items-center justify-center p-2 rotate-[-90deg] bg-white text-black rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                
+                            <!-- Main Section -->
+                            
+                                
+                                 <div data-product-type="apple" data-carousle-type="1" class=" relative carousleWrapper h-[75%] rounded-3xl flex overflow-x-scroll scroll-smooth snap-align-none snap-x scrollbar-none">
+                                    
+                           </div>
+                        </div>
+                    </div>
+                
+            </div>
+
+            <!-- // 2nd carousle  -->
+       
+            <div  class="carousles relative max-w-xl h-[60svh] mx-auto bg-gray-200 rounded-3xl overflow-clip scroll-smooth scrollbar-none scrollbar-none shadow-lg">
+                <div class="flex justify-center items-center h-[100%]">
+                    <div class="bg-gray-200 w-[98%] h-full flex flex-col justify-between pt-2 pb-0 overflow-hidden">
+                        <!-- Header Section -->
+                        <div class="flex items-center justify-between px-4 bg-gray-200">
+                            <!-- First flex item: Rounded button with gallery icon -->
+                            <button class="previousButton items-center justify-center p-2 bg-white text-black rounded-full rotate-[90deg]">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+            
+                            <!-- Second flex item: Title, Current Date, Company Name -->
+                            <div class="text-center space-y-1">
+                                <h2 class="text-lg font-semibold font-PopinsStyle">Feautring</h2>
+                                <div class="flex justify-center space-x-3">
+                                    <span class="text-sm text-gray-600" id="current-date"></span>
+                                    <span class="text-sm text-gray-600">Apple</span>
+                                </div>
+                            </div>
+            
+                            <!-- Third flex item: Rounded button with arrow icon -->
+                            <button class="nextButton flex items-center justify-center p-2 rotate-[-90deg] bg-white text-black rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                        </div>
+            
+                        <!-- Main Section -->
+                        
+                            
+                             <div data-product-type="nothing" data-carousle-type="1" class="relative carousleWrapper h-[75%] rounded-3xl flex overflow-x-scroll scroll-smooth snap-align-none snap-x scrollbar-none">
+                                
+                       </div>
+                    </div>
+                </div>
+                
+                    <script>
+                        // Set current date dynamically
+                        const currentDate = new Date().toLocaleDateString();
+                        document.getElementById('current-date').textContent = currentDate;
+                    </script>
+                
+                
+            </div>
+       
+
+
+        </section>
+
+
+
+
+
+
+
+    </main>
+
+    <!--FOOTER-->
+    <!--FOOTER-->
+
+    <footer class="p-4 md:p-8 flex flex-col">
+        <div class="footerSec1">
+            <span class="logo font-InKutStyle font-semibold text-lg select-none ml-auto mr-4 md:shrink-0">Pind Pizza</span>
+            <div class="feedbackDiv">
+                <form action="">
+                    <input type="text" placeholder="Leave A Comment Here! ">
+                    <button type="submit"> Submit</button>
+
+                </form>
+
+            </div>
+
+            <sec class="footerMainSec flex flex-col gap-y-4 bg-gray-200 py-4 mt-12">
+                <ul id="footerList1" class=" text-center flex flex-col md:flex-row md:gap-x-12 justify-center gap-y-2">
+                    <li class="footerItems"><a href=""><span class="font-PopinsStyle text-xl">Project</span></a></li>
+                    <li class="footerItems"><a href=""><span class="font-PopinsStyle text-xl">About Us</span></a></li>
+                    <li class="footerItems"><a href="home.html"><span class="font-PopinsStyle text-xl">Home</span></a></li>
+
+                </ul>
+
+                <ul id="footerList2" class=" relative h-12 flex justify-center gap-x-4 md:gap-x-12">
+                    <a href="#" class="footerList2Items w-10"><img class="w-full h-full" src="images/icons/insta-svgrepo-com.svg" alt="link" ></a>
+                    <a href="#" class="footerList2Items w-10"><img class="w-full h-full" src="images/icons/github-142-svgrepo-com.svg" alt="link" ></a>
+                    <a href="#" class="footerList2Items w-10"><img class="w-full h-full" src="images/icons/twitter-svgrepo-com.svg" alt="link" ></a>
+
+                </ul>
+                <p class="font-PopinsStyle text-xs text-gray-700 text-center">@Last Year Project<span class="block">by Anmolpreet Singh</span></p>
+
+            </sec>
+        </div> <!--footer sec 1 finished here-->
+
+
+
+
+    </footer>
+
+    <script src="tailwindManage.js"></script> 
+    <script type="module" src="headerFiles.js"></script> 
+    <script type="module" src="01-index.js"></script> 
+    <script type="module" src="02-cartScript.js"></script> 
+    <script type="module" src="05-searchAlgo.js"></script> 
+    <script type="module" src="06-paths.js"></script> 
+</body>
+</html>

@@ -8,9 +8,68 @@
   <link rel="stylesheet" href="output.css">
 </head>
 <body class="bg-gray-100">
+  <header  class="z-100">
+    <!-- header data  -->
+  </header>
+
+  <!-- // cart pannel  -->
+<div class="cartPannel fixed h-full w-[80%] md:w-[30%] backdrop-blur-sm bg-white/90 z-[999] top-0 right-[-100%] p-4">
+  <!-- cart header  -->
+ <div class="cartHeader flex gap-8 items-center border-b-2">
+     <div data-action="open" class="cartButton icon mr-0 bg-white  h-8 w-8 rounded-3xl">
+         <img  src="images/icons/cross-svgrepo-com.svg" type="svg" alt="img">
+        
+     </div>
+
+     <span class="text-black font-PopinsStyle ">Cart Preview</span>
+ </div>
   
+ <!-- cart body  -->
+ <div class="relative h-[75%] px-4 py-8 overflow-y-scroll">
+
+
+     <div class="cartItemsDiv flex flex-col gap-y-12"></div>
+ </div>
+
+<!-- card bottom  -->
+<div class="cartBottom grid grid-rows-2 grid-cols-2 gap-y-4 px-2 py-4 border-t-2">
+
+ <div class="font-PopinsStyle font-light text-sm row-span-1 col-span-1">
+     Total Amount : 
+     <span class="cartTotalAmount block text-sm text-center">9999</span>
+     
+ </div>
+ <div class="font-PopinsStyle font-light text-sm row-span-1 col-span-1">
+     Total Products : 
+     <span class="cartTotalProduct block text-sm text-center">9999</span>
+     
+ </div>
+
+ <button class="proceedButton row-span-1 col-span-2 border-2 rounded-xl text-white bg-black">PROCEED</button>
+
+
+
+
+</div> 
+
+</div>
+
+<!-- //cart massages  -->
+
+<div class="notiFyMe fixed hidden gap-x-4 h-11 w-[80%] md:w-[30%] z-[999] top-[86%] left-[10%] md:left-[35%] border-[2px] rounded-xl bg-white shadow-green-500/30 shadow-xl overflow-hidden">
+ <div class=" relitive h-full w-12 bg-green-400 overflow-hidden content-center">
+     <img class="h-[60%] w-full" src="images/icons/check-double.svg" type="svg" alt="">
+ </div>
+ <div class="font-bold font-PopinsStyle text-sm content-center">Item <span class="massageAction">Added!</span></div>
+</div>
+
+<!-- ////// main  -->
+<!-- ////// main  -->
+
+<!-- ////// main  -->
+<!-- ////// main  -->
 <main class="text-gray-800 font-sans overflow-clip">
-  <div class="mainT max-w-6xl mx-auto p-1">
+  <div class="max-w-6xl pt-20 mx-auto p-1">
     <!-- Main Container -->
     <div class="searchCover flex flex-col gap-y-16">
       
@@ -70,7 +129,9 @@
 </main>
 
 
+<script type="module" src="headerFiles.js"></script>
 <script type="module" src="02-cartScript.js"></script>
 <script type="module" src="05-searchAlgo.js"></script>
+<script type="module" src="06-paths.js"></script> 
 </body>
 </html>

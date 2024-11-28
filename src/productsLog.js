@@ -35,7 +35,7 @@ export const productLog =[
           </span>
 `,
       
-            image: "src/images/products/BBUDS1.jpg",
+            image: "images/products/BBUDS1.jpg",
             color: 'white'
           },
           {
@@ -61,7 +61,7 @@ and convenience, whether you're working, traveling, or relaxing with your favori
             #buds #earphones
              </span> ` ,
 
-            image: "src/images/products/ER1.jpg",
+            image: "images/products/ER1.jpg",
             color: 'white'
           },
           {
@@ -84,7 +84,7 @@ and convenience, whether you're working, traveling, or relaxing with your favori
          <span class="tagsOnProduct block lg:mt-8 mt-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
               #watch #smartwatch
              </span> ` ,
-            image: "src/images/products/CWATCH1.jpg",
+            image: "images/products/CWATCH1.jpg",
             color: 'white'
       
           },
@@ -108,7 +108,7 @@ and convenience, whether you're working, traveling, or relaxing with your favori
          <span class="tagsOnProduct block lg:mt-8 mt-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
              #purple #watch #smartwatch
              </span> ` ,
-            image: "src/images/products/CWATCH2.jpg",
+            image: "images/products/CWATCH2.jpg",
             color: 'white'
           },
           {
@@ -130,7 +130,7 @@ and convenience, whether you're working, traveling, or relaxing with your favori
            #new #popular #watch #smaertwatch
              </span> `,
 
-            image: "src/images/products/NWA1.jfif",
+            image: "images/products/NWA1.jfif",
             color: 'white'
           },
           {
@@ -150,7 +150,7 @@ and convenience, whether you're working, traveling, or relaxing with your favori
       <span class="tagsOnProduct block lg:mt-8 mt-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
           #popular #watch #smartwatch
           </span> ` ,
-            image: "src/images/products/BOAT3.jfif",
+            image: "images/products/BOAT3.jfif",
             color: 'white'
           },
           {
@@ -172,7 +172,7 @@ and convenience, whether you're working, traveling, or relaxing with your favori
          <span class="tagsOnProduct block lg:mt-8 mt-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
              #featuring #vrheadset #virtual
              </span> ` ,
-            image: "src/images/products/Apple_Vision_Pro.jfif",
+            image: "images/products/Apple_Vision_Pro.jfif",
             color: 'white'
           },
           {
@@ -194,7 +194,7 @@ and convenience, whether you're working, traveling, or relaxing with your favori
          <span class="tagsOnProduct block lg:mt-8 mt-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
              #popular #watch #smartwatch
              </span> ` ,
-            image: "src/images/products/APPW1.jfif",
+            image: "images/products/APPW1.jfif",
             color: 'white'
           },
           {
@@ -216,7 +216,7 @@ and convenience, whether you're working, traveling, or relaxing with your favori
       <span class="tagsOnProduct block lg:mt-8 mt-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
           #popular #earphone #buds
           </span> `,
-            image: "src/images/products/NBUDS1.jfif",
+            image: "images/products/NBUDS1.jfif",
             color: 'whitesmoke'
           },
           
@@ -231,7 +231,7 @@ and convenience, whether you're working, traveling, or relaxing with your favori
             Exciting new products are on the way! We're working hard to bring you the lates and most innovative items that will elevate your experience. Whether you're looking for cutting-edge tech, stylish fashion, or must-have accessories, we’ve got something special in store for you. These items are not available just yet, 
             but they’re worth the wait! Stay tuned and check back soon for updates – you won’t want to miss out on these upcoming arrivals. #upcoming #comming soon`,
             
-            image: "src/images/products/UPCOM1.jfif",
+            image: "images/products/UPCOM1.jfif",
             color: 'white'
           },
           {
@@ -244,8 +244,10 @@ and convenience, whether you're working, traveling, or relaxing with your favori
             Exciting new products are on the way! We're working hard to bring you the lates and most innovative items that will elevate your experience. Whether you're looking for cutting-edge tech, stylish fashion, or must-have accessories, we’ve got something special in store for you. These items are not available just yet, 
             but they’re worth the wait! Stay tuned and check back soon for updates – you won’t want to miss out on these upcoming arrivals. #upcoming #comming soon`,
             
-            image: "src/images/products/UPCOM2.jfif",
+            image: "images/products/UPCOM2.jfif",
             color: 'white'
           }
 
 ]
+
+

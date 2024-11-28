@@ -61,11 +61,14 @@ const carousleSection = document.querySelector('.carousleSection');
 if(carousleSection){
 
     carousleSection.addEventListener("click", (event) => {
-        let triggerButton = event.target.closest('.buyButtonOnCarousle');
+        let triggerButton = event.target.closest('.buyButtonOnCarousle_BUTTON');
         // let productId = triggerButton.dataset.productId;
         let priceAttribute_String = triggerButton.getAttribute("priceAttribute");
-        let priceAttribute_float = parseFloat(priceAttribute_String);
-            addingItemsToCart(triggerButton, priceAttribute_float);
+        if(priceAttribute_String){
+
+            let priceAttribute_float = parseFloat(priceAttribute_String);
+                addingItemsToCart(triggerButton, priceAttribute_float);
+        }
     });
 };
 
@@ -146,7 +149,7 @@ function displayCart(){
         tempHtml +=`<div class="itemsInCart flex items-center gap-x-4 overflow-hidden">
         
         <div class="h-10 w-12 relative">
-        <img class="object-center object-cover" src="${item.image}">
+        <img class="cartProductImage object-center object-cover" src="${item.image}" alt="img">
         </div>
 
         <div class="">
@@ -154,12 +157,13 @@ function displayCart(){
         </div>
        
          <div data-item-id="${item.id}" class="removeItemInCart h-[30px] w-[30px] flex items-center text-center opacity-[0.5] ml-auto cursor-pointer">
-          <img class="min-h-full w-full" src="src/images/icons/cross-svgrepo-com.svg" type="svg" alt="Img">
+          <img class="min-h-full w-full" src="images/icons/cross-svgrepo-com.svg" type="svg" alt="img">
          </div>
         
         </div>`;
+        
     })
-
+      
     
     let cartItemsDiv = document.querySelector('.cartItemsDiv');
     if(cartItemsDiv){
@@ -229,6 +233,7 @@ document.querySelectorAll('.cartItemsDiv').forEach((divItem)=>{
 
 
 localStorage.setItem('cartProductsRecord', JSON.stringify(cartProducts));
+// changeImgSRC();
 
 function removeItemFromCart(idParam){
     cartProducts = cartProducts.filter(productItem=> productItem.id !==idParam);
@@ -273,3 +278,12 @@ function notiFyMeFunction(){
 // localStorage.removeItem('cartProductsRecord');
 console.log("cartlog");
 console.log(cartProducts);
+
+
+
+
+
+// Call the function
+
+
+
