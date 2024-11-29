@@ -59,6 +59,18 @@ details summary{
     animation: opacityAnime 3s forwards infinite ;
 
 }
+.heroTransition1{
+    animation: heroTransition 5s forwards infinite ease-in-out;
+}
+
+@keyframes heroTransition {
+    0%, 100%{
+        width: 0%;
+    }
+    20%,80%{
+        width: 100%;
+    }
+}
 
 @keyframes opacityAnime {
     0%,100%{
@@ -68,6 +80,35 @@ details summary{
         opacity: 0%;
     }
     
+}
+main div{
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0%;
+
+}
+@keyframes appear {
+    from{
+        /* opacity: 0; */
+        scale: 0.8;
+    }
+    to{
+        /* opacity: 1; */
+        scale: 1;
+    }
+};
+
+.desinOfHero .box1 {
+    animation: loop1 var(--runTime) forwards infinite ease-in-out;
+}
+@keyframes loop1 {
+from{
+     transform: translateY(-100%);
+    }
+    to{
+    transform: translateY(500%);
+
+}
 }
 
 

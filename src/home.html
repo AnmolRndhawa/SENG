@@ -22,7 +22,7 @@
         
     </style>
 </head>
-<body>
+<body class="overflow-y-scroll scroll-smooth">
     <header class="z-100">
 </header>
 <!-- // cart pannel  -->
@@ -80,28 +80,49 @@
 <!-- // main  -->
 <!-- // main  -->
     
-    <main data-visibility="true" class="flex flex-col gap-y-10 md:gap-y-20 overflow-clip">
+    <main data-visibility="true" class="flex flex-col gap-y-10 md:gap-y-20 overflow-clip scroll-smooth">
   
         <!-- searchBar -->
         <!-- searchBar -->
 
-         <div class="searchbarWrapper h-[50svh] relative bg-white mt-16 mb-4  md:mx-16 flex flex-col items-center justify-center overflow-clip">
-            <p class="absolute inset-0 mt-20 text-center text-xl md:text-2xl font-PopinsStyle font-bold text-gray-500">Live Smart, Shop Smarter! with <span class="block text-3xl md:text-6xl font-black bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">SENG</span></p>
+         <div class="searchbarWrapper h-[80svh] relative bg-black mt-16 mb-4 md:mx-16 flex flex-col items-center justify-center overflow-clip">
+            <div class="w-screen flex flex-col gap-y-12 items-center p-8">
+                <!-- First Flex Item: Bigger Title -->
+                <h1 class="md:leading-[4rem] text-center text-3xl md:text-4xl font-normal text-white">Style Your Life, The <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-pink-500 to-blue-500">SENG</span>  Way!
+                
+                    <!-- Second Flex Item: Slightly Smaller Title -->
+                    <span class="heroTransition1 block whitespace-nowrap overflow-hidden truncate text-xl md:text-3xl mt-6 md:mt-0 text-gray-500">amazing deals, seamless experience!</span>
+                </h1>
+                
+                
+                <!-- Third Flex Item: White Button with Black Text -->
+               
+              </div>
+              
             <div id="searchBar" 
-        class="  min-h-16 flex items-center justify-cente mt-48">
+        class="  min-h-16 flex items-center justify-cente mt-12">
         <input class="searchInput px-8 py-2 md:px-10 md:py-4 text-center rounded-3xl border-2 focus:outline-none z-10 " type="search" placeholder="Search..">
-        
+    
     </div>
 
-   
+    <a href="#getStarted"><button class="hidden md:block bg-white text-black px-8 py-2 rounded-lg mt-[8rem]">Lets Go!</button></a>
     
+    <div class="desinOfHero absolute inset-0 z-[-4] flex gap-x-8">
+
+        <div class="box1 h-[150px] w-[150px] relative mx-auto rounded-full bg-gradient-to-r from-red-400 via-pink-500 to-blue-500 blur-lg"></div>
+        <div class="box1 hidden md:block h-[150px] w-[150px] relative mx-auto rounded-full bg-gradient-to-r from-red-400 via-pink-500 to-blue-500 blur-lg"></div>
+        <div class="box1 hidden md:block h-[150px] w-[150px] relative mx-auto rounded-full bg-gradient-to-r from-red-400 via-pink-500 to-blue-500 blur-lg"></div>
+        <div class="box1 hidden md:block h-[150px] w-[150px] relative mx-auto rounded-full bg-gradient-to-r from-red-400 via-pink-500 to-blue-500 blur-lg"></div>
+    </div>
+
 </div>
+
     <!-- searchBar -->
     <!-- searchBar -->
 
     <!-- Categories Options  -->
     <!-- Categories Options  -->
-     <section class="categoriesSec flex flex-col gap-y-2 md:gap-y-12 md:px-8 overflow-hidden px-4">
+     <section id="getStarted" class="categoriesSec flex flex-col gap-y-2 md:gap-y-12 md:px-8 overflow-hidden px-4">
          <span class="font-PopinsStyle font-semibold text-lg md:text-5xl">Categories</span>
 
          <div class="carousel w-fit flex justify-start border-2 rounded-3xl gap-x-4 md:gap-x-8 lg:gap-x-20 overflow-x-scroll scroll-smooth snap-mandatory md:overflow-hidden"></div>
@@ -270,4 +291,19 @@
     <script type="module" src="05-searchAlgo.js"></script> 
     
 </body>
+<script>
+    // Function to generate random runtime between min and max seconds
+    function getRandomRuntime(min, max) {
+        return (Math.random() * (max - min) + min).toFixed(2); // Return rounded value
+    }
+
+    // Select all .box1 elements
+    const boxes = document.querySelectorAll('.box1');
+
+    // Loop through each box and apply a random --runTime value
+    boxes.forEach(box => {
+        const randomTime = getRandomRuntime(1, 10); // Random between 1 and 5 seconds
+        box.style.setProperty('--runTime', `${randomTime}s`); // Set the custom property
+    });
+</script>
 </html>
