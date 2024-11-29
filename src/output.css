@@ -1999,7 +1999,7 @@ details summary{
   }
 }
 
-main div{
+.homeMain div{
   animation: appear linear;
   animation-timeline: view();
   animation-range: entry 0%;
