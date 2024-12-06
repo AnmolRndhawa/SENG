@@ -205,7 +205,7 @@ function generatePDF(){
                 }
             }],
             invDescLabel: "Important Note",
-            invDesc: ` 1. Please review the details of this invoice carefully. For any discrepancies or issues with your order, contact us within [insert timeframe, e.g., 7 days] at [insert contact information].
+            invDesc: ` 1. Your product will be delivered within 10 business days. For any discrepancies or issues with your order, contact us within [insert timeframe, e.g., 7 days] at [insert contact information].
 2. Keep this invoice as proof of purchase for any warranty claims, returns, or exchanges.
 3. For digital payments, ensure your transaction ID matches the one provided in your payment confirmation.`,
         },

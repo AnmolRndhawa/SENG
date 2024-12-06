@@ -81,22 +81,27 @@ details summary{
     }
     
 }
+
+
 .homeMain div{
-    animation: appear linear;
+    animation: scaleInAnimation linear;
     animation-timeline: view();
     animation-range: entry 0%;
 
 }
-@keyframes appear {
+
+@keyframes scaleInAnimation {
     from{
-        /* opacity: 0; */
+        
         scale: 0.8;
+        
     }
     to{
-        /* opacity: 1; */
+        
         scale: 1;
     }
 };
+
 
 .desinOfHero .box1 {
     animation: loop1 var(--runTime) forwards infinite ease-in-out;
@@ -109,6 +114,15 @@ from{
     transform: translateY(500%);
 
 }
+}
+
+.hoverMe span::after {
+    content: ">";
+    color: black;
+    position: absolute; /* or 'relative', based on the context */
+    transform: rotate(90deg); /* Adjusted for better testing */
+    margin-left: 0.6rem;
+    opacity: 0.6;
 }
 
 

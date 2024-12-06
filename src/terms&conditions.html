@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms and Conditions</title>
+  <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-gray-100 h-screen flex flex-col">
+
+  <!-- Fixed Header -->
+  <div class="fixed top-0 left-0 w-full bg-white shadow-md z-10 flex justify-between items-center px-6 py-4">
+    <!-- Logo -->
+    <div class="flex items-center">
+      <img src="images/icons/SENG1.png" alt="Logo" class="w-12 h-12">
+    </div>
+    <!-- Heading -->
+    <h1 class="text-2xl font-semibold text-gray-900">Terms and Conditions</h1>
+  </div>
+
+  <!-- Scrollable Body -->
+  <div class="mt-20 flex-grow overflow-y-scroll px-6 pb-20 relative bg-gradient-to-b from-white to-white/50">
+    <div class="displayTerms flex flex-col space-y-6 text-sm pt-[12svh]">
+     
+    </div>
+  </div>
+
+  <!-- Footer with Buttons -->
+  <div class="fixed bottom-0 left-0 w-full bg-white shadow-md px-6 py-4 flex gap-x-4 justify-between lg:justify-end">
+    <button data-button-name="decline" id="decline" class="actionButton border border-red-500 text-red-500 px-4 py-2 rounded hover:bg-red-100">
+      Decline
+    </button>
+    <button data-button-name="accept" class="actionButton border border-green-500 text-green-500 px-4 py-2 rounded hover:bg-green-100">
+      Accept
+    </button>
+  </div>
+
+</body>
+<script>
+
+let actionButton = document.querySelectorAll('.actionButton');
+actionButton.forEach((buttonItem)=>{
+    let buttonName = buttonItem.dataset.buttonName;
+    buttonItem.addEventListener("click",()=>{
+        if(buttonName==='accept'){
+            window.location.href = "checkOut.html";
+        }
+        if(buttonName==='decline'){
+               history.go(-2);
+            
+        }
+    })
+});
+
+
+
+const ruleBook =[
+{
+    heading : "Acceptance of Terms",
+    articals : ` By using the SENG website, you acknowledge that you have read, understood, and agreed to these Terms and Conditions. 
+    If you do not agree, please refrain from using the website`
+},
+{
+    heading : " Products and Services",
+    articals : `
+Product Availability: All products are subject to availability. SENG reserves the right to modify or discontinue products at any time without notice.<Br><Br>
+Product Descriptions: We strive to provide accurate product descriptions. However, SENG does not guarantee that all descriptions, images, or specifications are error-free.
+`
+},
+{
+    heading : "User Responsibilities",
+    articals : `
+Accurate Information: You agree to provide accurate and complete information when creating an account, placing orders, or filling out forms.<Br><Br>
+Prohibited Activities: Users must not engage in any illegal, fraudulent, or harmful activity while using the website.
+`
+},
+{
+    heading : "Orders and Payments",
+    articals : `
+Placing Orders: Orders are only confirmed upon receipt of payment and confirmation email from SENG.<Br><Br>
+Payment Methods: We accept secure payments through credit cards, debit cards, and other available methods displayed at checkout.<Br><Br>
+Cancellations: Orders may be canceled before shipment. Once shipped, cancellations are no longer possible.
+`
+},
+{
+    heading : "Shipping and Delivery",
+    articals : `
+Delivery Timelines: We aim to deliver your products within the estimated timeframes provided at checkout. Delays may occur due to unforeseen circumstances.<Br><Br>
+Shipping Charges: Delivery charges, if applicable, will be displayed during checkout.<Br><Br>
+Address Accuracy: It is the user's responsibility to provide an accurate shipping address.
+`
+},
+{
+    heading : "Limitation of Liability",
+    articals : `
+SENG is not responsible for any damages or losses arising from:<Br><Br>
+
+Incorrect use of the products purchased.<Br><Br>
+Website downtime, technical errors, or delays beyond our control.
+`
+},
+{
+    heading : "Modifications to Terms",
+    articals : `
+SENG reserves the right to update or change these Terms and Conditions at any time. Continued use of the website signifies your acceptance of the updated terms.
+`
+},
+{
+    heading : "Governing Law and Dispute Resolution",
+    articals : `
+These Terms and Conditions are governed by the laws of INDIA. Any disputes shall be resolved through arbitration or in the courts of INDIA.
+
+`
+},
+
+];
+
+
+ruleBook.forEach((ruleItem)=>{
+let tempHtml ="";
+tempHtml =` <p>
+    <span class="text-xl underline underline-offset-4 font-PopinsStyle">${ruleItem.heading}</span>
+    <span class="block mt-[2rem] text-gray-600 font-PopinsStyle">${ruleItem.articals}</span>
+
+    
+    </p>`;
+
+    
+    document.querySelector(".displayTerms").innerHTML += tempHtml;
+})
+</script>
+</html>

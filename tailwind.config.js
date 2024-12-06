@@ -8,6 +8,11 @@ module.exports = {
     extend: {   boxShadow: {
       'inner-deep': 'inset 0 4px 8px rgba(0, 0, 0, 0.3)', // Customize shadow
     },
+    backgroundImage: {
+      'navbar-gray': 'linear-gradient(to bottom, #e5e7eb, #d1d5db)', // Normal gray for 10-20%
+      'navbar-progress-1': 'linear-gradient(to bottom, white, #93c5fd)', // Progress at 50-60%
+      'navbar-progress-2': 'linear-gradient(to bottom, #93c5fd, #3b82f6)', // Near completion at 90-100%
+    },
       fontFamily:{
       
           'PopinsStyle':['Poppins','sans-serif'],

@@ -12,7 +12,7 @@ headerHtml = `
         <!-- navLinks for desktop  -->
         <!-- navLinks for desktop  -->
         <div class="hidden absolute inset-y-0 inset-x-12 m-auto md:flex justify-center items-center gap-x-12">
-            <div><a class="font-PopinsStyle" data-name="Home" href="index.html"><span>Home</span></a></div>
+            <div><a class="font-PopinsStyle" data-name="Home" href="home.html"><span>Home</span></a></div>
             <div class="group"><a class="js-headerLinks font-PopinsStyle relative drop-shadow-md" data-name="Shop" href="#"><span>Shop</span></a>
     <!--// SubMenu 1-->
     <!--// SubMenus-->
@@ -21,9 +21,9 @@ headerHtml = `
     <div class="absolute subMenus hidden items-center justify-center gap-x-24 shadow-lg bg-white left-0 right-0 py-12">
         <ul class="flex flex-col gap-y-6">
             <span class="text-black mt-12 ">Item Spesific :</span>
+            <a href="searchResults.html" class="sublinks text-4xl flex gap-x-4">Search<img class="w-[30px]" src="images/icons/search-svgrepo-com.svg" alt="icon"></a>
             <a href="#" class="sublinks text-4xl">Smart Watches</a>
             <a href="#" class="sublinks text-4xl">EarPhone / Buds</a>
-            <a href="#" class="sublinks text-4xl">Special</a>
             <a href="#" class="sublinks text-4xl">All Items</a>
         </ul>
         <ul class="flex flex-col gap-y-6">
@@ -168,10 +168,11 @@ document.querySelector('header').innerHTML = headerHtml;
             if(targetButton && subMenus){
                 toggleClasses(subMenus, "add");
                let spanItem = targetButton.querySelector('span');
+               targetButton.classList.add("hoverMe");
                if(spanItem){
-
+                   
                    toggleBlur("add");
-               }
+                }
             }
             
         });
@@ -185,6 +186,7 @@ document.querySelector('header').innerHTML = headerHtml;
             
             if(targetButton && subMenus){
                 toggleClasses(subMenus, "hide");
+                targetButton.classList.remove("hoverMe");
                 let spanItem = targetButton.querySelector('span');
                if(spanItem){
                    toggleBlur("hide");
@@ -205,20 +207,22 @@ document.querySelector('header').innerHTML = headerHtml;
             if(subMenus && navItem){
             toggleClasses(subMenus, "add");
             toggleBlur("add");
-            navItem.classList.add("hoverMyNav");
+            navItem.classList.add("hoverMe");
+            // navItem.classList.add("hoverMyNav");
             
         }
-   
-        });
+        
+    });
 
-        headerNavClass.addEventListener("mouseout",(event)=>{
+    headerNavClass.addEventListener("mouseout",(event)=>{
             
-            let subMenus = event.target.closest(".subMenus");
-            let navItem = subMenus.parentElement;
-            if(subMenus && navItem){
+        let subMenus = event.target.closest(".subMenus");
+        let navItem = subMenus.parentElement;
+        if(subMenus && navItem){
             toggleClasses(subMenus, "hide");
             toggleBlur("hide");
-            navItem.classList.remove("hoverMyNav");
+            navItem.classList.remove("hoverMe");
+            // navItem.classList.remove("hoverMyNav");
         }
         
    
@@ -258,7 +262,6 @@ document.querySelector('header').innerHTML = headerHtml;
    };
 
 
-  
 
 
 

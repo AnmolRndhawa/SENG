@@ -38,7 +38,7 @@ cartProducts.forEach((cartItem)=>{
                 </div>
             </div>
           <!-- item5  -->
-          <div class="text-xs font-PopinsStyle row-start-2 col-start-3 sm:row-start-1 sm:col-start-5 flex flex-col items-center">
+          <div class="text-xs row-start-2 col-start-3 sm:row-start-1 sm:col-start-5 flex flex-col items-center">
             <span class="text-gray-500 md:hidden">Price: </span>
             <!-- Price -->
             <div class="text-lg font-semibold">₹ ${Number((cartItem.price.replace(/,/g,"")) * Number(cartItem.quantity)).toLocaleString()}</div>
@@ -232,20 +232,23 @@ totalProductsCount = cartProducts.reduce((accmulator, item)=>{
     SummaryOrBill();
 
 
-    // gettiing final values
-
-    // let finalValues = SummaryOrBill();
-
-    // let FinalOrderDetails = {
-    //   finalPrice: parseInt(finalValues.totalAmountCount),
-    //   finalProducts: finalValues.totalProductsCount
-    // };
-
 
     // proceedButton
 
     const proceedToCheckoutButton = document.getElementById("proceedToCheckoutButton");
     proceedToCheckoutButton.addEventListener("click",()=>{
-      window.location.href = "checkOut.html";
+       window.location.href = "terms&conditions.html";
 
     });
+
+    // restricting to back button 
+document.addEventListener("DOMContentLoaded", function () {
+  // Add an entry to the history stack
+  history.pushState(null, "", window.location.href);
+
+  // Listen for the back button event
+  window.addEventListener("popstate", function () {
+    // Redirect the user to a specific page
+    window.location.replace("home.html"); // Replace with your desired URL
+  });
+});

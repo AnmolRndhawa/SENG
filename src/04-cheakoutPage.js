@@ -24,6 +24,7 @@ if(mainContent){
     mainContent.onscroll = function(){ progressBar();};
     
     function progressBar() {
+       const progressBar = document.querySelector('.progressBar');
         
         let totalScrollableHeight = mainContent.scrollHeight - mainContent.clientHeight;
         let scrollHeight = (mainContent.scrollTop / Number(totalScrollableHeight)) * 100;
@@ -32,26 +33,34 @@ if(mainContent){
             addressStep.classList.remove("text-gray-400");
             paymentStep.classList.add("text-gray-400");
             reviewstep.classList.add("text-gray-400");
+            progressBar.classList.remove("bg-navbar-progress-1");
+            progressBar.classList.add("bg-navbar-gray");
             
         }
-
+        
         if(mainContent.scrollTop >= totalScrollableHeight/2){
             addressStep.classList.add("text-gray-400");
             paymentStep.classList.remove("text-gray-400");
             reviewstep.classList.add("text-gray-400");
+            progressBar.classList.remove("bg-navbar-gray");
+            progressBar.classList.remove("bg-navbar-progress-2");
+            progressBar.classList.add("bg-navbar-progress-1");
+            
             
         }
         if(scrollHeight >=90){
             addressStep.classList.add("text-gray-400");
             paymentStep.classList.add("text-gray-400");
             reviewstep.classList.remove("text-gray-400");
-            
+            progressBar.classList.remove("bg-navbar-progress-1");
+            progressBar.classList.add("bg-navbar-progress-2");
+            // bg-gradient-to-b from-white to-blue-400
         }
 
         // console.log(mainContent.scrollTop + "scrolled pixels");
         // console.log(parseInt(scrollHeight) + "% scrolled");
           
-       document.querySelector('.progressBar').style.height = `${parseInt(scrollHeight)}%`;
+        progressBar.style.height = `${parseInt(scrollHeight)}%`;
 
         
         
@@ -269,22 +278,4 @@ function saveDataInLocal(){
 
 
 
-
-
-    // statusText.style.display = "none";
-
-    // let xhr = new XMLHttpRequest();
-    // xhr.open("POST", "message.php", true);
-    // xhr.onload=()=>{
-    //     if(xhr.readyState == 4 && xhr.status == 200) {
-    //         // ready state = 4 : rquest finished and response is ready
-    //          // status  = 200 : "OK", 403 = Forbidden , 404 = page not found 
-    //          let response = xhr.response;
-    //          console.log(response);
-
-    //          statusText.innerText = response;
-
-    //     }
-    // };
-    // let formData = new FormData(form);
-    // xhr.send(formData); // send data
+  
