@@ -570,6 +570,10 @@ video {
   position: relative;
 }
 
+.sticky{
+  position: sticky;
+}
+
 .inset-0{
   inset: 0px;
 }
@@ -2141,9 +2145,9 @@ details summary{
 
 @keyframes slideDownAnimate {
   from{
-    transform: translateY(-50%);
+    transform: translateX(-90%);
     opacity: 0.8;
-    /* filter: blur(20px); */
+    filter: blur(20px);
   }
 
   to{

@@ -140,7 +140,11 @@ document.querySelector('header').innerHTML = headerHtml;
     function openMenu() {
         if (menuForPhone) menuForPhone.classList.toggle('hidden');
         const main = document.querySelector('main');
-        if (main) main.classList.toggle('hidden');
+        if (main){
+               
+     main.classList.toggle('hidden');
+            
+        } 
     }
 
     const cartPannel = document.querySelector('.cartPannel');
