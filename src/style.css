@@ -125,6 +125,23 @@ from{
     opacity: 0.6;
 }
 
+#menuForPhone{
+    animation: slideDownAnimate 0.5s forwards ease-in-out;
+    
+}
+
+@keyframes slideDownAnimate {
+    from{
+        transform: translateY(-50%);
+        opacity: 0.5;
+        filter: blur(20px);
+        
+    }
+    to{
+        opacity: 1;
+        
+    }
+}
 .wordSpace{
     letter-spacing: 0.2rem;
     color:#858885;

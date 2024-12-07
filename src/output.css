@@ -1209,6 +1209,10 @@ video {
   grid-template-rows: 1fr 1fr;
 }
 
+.grid-rows-\[1fr_1fr_1fr\]{
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
 .grid-rows-\[400px\]{
   grid-template-rows: 400px;
 }
@@ -1217,24 +1221,12 @@ video {
   grid-template-rows: 50% 50%;
 }
 
-.grid-rows-3{
-  grid-template-rows: repeat(3, minmax(0, 1fr));
-}
-
-.grid-rows-\[1fr_1fr_1fr\]{
-  grid-template-rows: 1fr 1fr 1fr;
-}
-
 .flex-row{
   flex-direction: row;
 }
 
 .flex-col{
   flex-direction: column;
-}
-
-.place-content-center{
-  place-content: center;
 }
 
 .content-center{
@@ -1261,6 +1253,10 @@ video {
   justify-content: space-between;
 }
 
+.gap-12{
+  gap: 3rem;
+}
+
 .gap-2{
   gap: 0.5rem;
 }
@@ -1275,10 +1271,6 @@ video {
 
 .gap-8{
   gap: 2rem;
-}
-
-.gap-12{
-  gap: 3rem;
 }
 
 .gap-x-12{
@@ -1766,10 +1758,6 @@ video {
   text-align: start;
 }
 
-.text-end{
-  text-align: end;
-}
-
 .font-InKutStyle{
   font-family: Inknut Antiqua, serif;
 }
@@ -2150,6 +2138,22 @@ details summary{
   /* Adjusted for better testing */
   margin-left: 0.6rem;
   opacity: 0.6;
+}
+
+#menuForPhone{
+  animation: slideDownAnimate 0.5s forwards ease-in-out;
+}
+
+@keyframes slideDownAnimate {
+  from{
+    transform: translateY(-50%);
+    opacity: 0.5;
+    filter: blur(20px);
+  }
+
+  to{
+    opacity: 1;
+  }
 }
 
 .wordSpace{
