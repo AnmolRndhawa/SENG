@@ -125,5 +125,8 @@ from{
     opacity: 0.6;
 }
 
-
+.wordSpace{
+    letter-spacing: 0.2rem;
+    color:#858885;
+}
 /* npx tailwindcss -i ./src/style.css -o ./src/output.css --watch */

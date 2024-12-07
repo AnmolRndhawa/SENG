@@ -48,37 +48,8 @@ searchInputs.forEach((searchInputItem) => {
                     window.location.href = `searchResults.html?query=${encodeURIComponent(searchedValue)}`;
                
                };
-
-            // searchedItem(searchInputItem.value);
-            // console.log("workingEvent");
-
         }
-    });
-    
-// let searchInputs = document.querySelectorAll('.searchbarWrapper input');
-
-// searchInputs.forEach((searchInputItem) => {
-//     searchInputItem.addEventListener("keydown", (event) => {
-//         if (event.key === "Enter") { // Correct key name is "Enter"
-//             event.preventDefault();
-//             // const searchedValue = searchInputItem.value.trim() + " " + filterValues;
-//             const searchedValue = searchInputItem.value.trim();
-//             let currentUrl = window.location.href; 
-//                if(searchedValue){
-//                 if(currentUrl.includes("index.html")){
-//                     window.location.href = `src/searchResults.html?query=${encodeURIComponent(searchedValue)}`;
-//                 }else{
-//                     window.location.href = `searchResults.html?query=${encodeURIComponent(searchedValue)}`;
-
-//                 }
-//                };
-
-//             // searchedItem(searchInputItem.value);
-//             // console.log("workingEvent");
-
-//         }
-//     });
-    
+    }); 
 });
 
 

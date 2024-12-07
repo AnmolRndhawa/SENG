@@ -1217,12 +1217,24 @@ video {
   grid-template-rows: 50% 50%;
 }
 
+.grid-rows-3{
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.grid-rows-\[1fr_1fr_1fr\]{
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
 .flex-row{
   flex-direction: row;
 }
 
 .flex-col{
   flex-direction: column;
+}
+
+.place-content-center{
+  place-content: center;
 }
 
 .content-center{
@@ -1263,6 +1275,10 @@ video {
 
 .gap-8{
   gap: 2rem;
+}
+
+.gap-12{
+  gap: 3rem;
 }
 
 .gap-x-12{
@@ -1475,6 +1491,11 @@ video {
 .border-red-500{
   --tw-border-opacity: 1;
   border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+
+.border-b-gray-300{
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
 .bg-black{
@@ -1709,6 +1730,10 @@ video {
   padding-bottom: 0px;
 }
 
+.pb-12{
+  padding-bottom: 3rem;
+}
+
 .pb-20{
   padding-bottom: 5rem;
 }
@@ -1725,6 +1750,10 @@ video {
   padding-top: 5rem;
 }
 
+.pt-4{
+  padding-top: 1rem;
+}
+
 .pt-\[12svh\]{
   padding-top: 12svh;
 }
@@ -1735,6 +1764,10 @@ video {
 
 .text-start{
   text-align: start;
+}
+
+.text-end{
+  text-align: end;
 }
 
 .font-InKutStyle{
@@ -2117,6 +2150,11 @@ details summary{
   /* Adjusted for better testing */
   margin-left: 0.6rem;
   opacity: 0.6;
+}
+
+.wordSpace{
+  letter-spacing: 0.2rem;
+  color:#858885;
 }
 
 /* npx tailwindcss -i ./src/style.css -o ./src/output.css --watch */

@@ -22,22 +22,22 @@ headerHtml = `
         <ul class="flex flex-col gap-y-6">
             <span class="text-black mt-12 ">Item Spesific :</span>
             <a href="searchResults.html" class="sublinks text-4xl flex gap-x-4">Search<img class="w-[30px]" src="images/icons/search-svgrepo-com.svg" alt="icon"></a>
-            <a href="#" class="sublinks text-4xl">Smart Watches</a>
-            <a href="#" class="sublinks text-4xl">EarPhone / Buds</a>
-            <a href="#" class="sublinks text-4xl">All Items</a>
+            <a href="#" data-search-term="watch" class="sublinks queryLinks  text-4xl">Smart Watches</a>
+            <a href="#" data-search-term="buds" class="sublinks  queryLinks text-4xl">EarPhone / Buds</a>
+            <a href="#" data-search-term="product" class="sublinks queryLinks text-4xl">All Items</a>
         </ul>
         <ul class="flex flex-col gap-y-6">
             <span class="text-black mt-12 ">Brands :</span>
-            <a href="#" class="sublinks text-2xl">Apple</a>
-            <a href="#" class="sublinks text-2xl">Nothing</a>
-            <a href="#" class="sublinks text-2xl">All Brands</a>
+            <a href="#" data-search-term="apple" class="sublinks queryLinks text-2xl">Apple</a>
+            <a href="#" data-search-term="nothing" class="sublinks queryLinks text-2xl">Nothing</a>
+            <a href="#" data-search-term="product" class="sublinks queryLinks text-2xl">All Brands</a>
         
         </ul>
         <ul class="flex flex-col gap-y-6">
             <span class="text-black mt-12 ">Tags :</span>
-            <a href="#fanFavSec" class="sublinks text-2xl">Popular Items</a>
-            <a href="#" class="sublinks text-2xl">New Items</a>
-            <a href="#" class="sublinks text-2xl">Featured Items</a>
+            <a href="#" data-search-term="popular" class="sublinks queryLinks text-2xl">Popular Items</a>
+            <a href="#" data-search-term="new" class="sublinks queryLinks text-2xl">New Items</a>
+            <a href="#" data-search-term="feature" class="sublinks queryLinks text-2xl">Featured Items</a>
         
         </ul>
 
@@ -97,10 +97,23 @@ headerHtml = `
 
         </nav>
 
-        <div class="absolute flex flex-col gap-y-12 text-lg inset-y-12 inset-x-0 py-28 m-auto justify-start items-center gap-x-12 md:hidden">
-            <a class="js-headerLinks" data-visibility="false">Home</span></a>
-            <a class="js-headerLinks" data-visibility="false">Shop</span></a>
-            <a class="js-headerLinks" data-visibility="false">Menu</span></a>
+        <div class="absolute grid grid-rows-[1fr_1fr_1fr] text-lg inset-y-12 inset-x-0 py-28 m-auto justify-center items-center gap-12 md:hidden">
+            <a href="home.html" class="js-headerLinks border-b-2 border-b-gray-300" data-visibility="false"><span class="wordSpace">Home</span></a>
+            <div class=" js-headerLinks flex flex-col border-b-2 border-b-gray-300" data-visibility="false"><span class="wordSpace">Shop</span>
+            <ul class="flex flex-col pt-4 pb-12">
+                     <li> <a href="searchResults.html">search</a></li>
+                     <li data-search-term="watch" class="queryLinks">Smart Watches</li>
+                     <li data-search-term="buds" class="queryLinks">Earphones/Buds</li>
+                     <li data-search-term="product" class="queryLinks">All</li>
+            </ul>
+            </div>
+            <div class="js-headerLinks flex flex-col border-b-2 border-b-gray-300" data-visibility="false"><span class="wordSpace">Menu</span>
+            <ul class="flex flex-col pt-4 pb-12">
+                      <li><a href="orderSummary.html">My Cart</a></li>
+                      <li><a href="">About Project</a></li>
+                      <li><a href="">About Us</a></li>
+            </ul>
+            </div>
         </div>
     </div>
     <!-- // menu for phone  -->
@@ -262,8 +275,18 @@ document.querySelector('header').innerHTML = headerHtml;
    };
 
 
+///queryLinks//////
+///queryLinks//////
 
+let headerTag = document.querySelector('header');
 
+headerTag.addEventListener("click",(event)=>{
+ let targetLink = event.target.closest('.queryLinks');
+ if(targetLink){
+    let searchTerm = targetLink.dataset.searchTerm;
+    window.location.href = `searchResults.html?query=${encodeURIComponent(searchTerm)}`;
+ }
+});
 
 
 
