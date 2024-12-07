@@ -742,11 +742,6 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.my-8{
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
 .mb-1{
   margin-bottom: 0.25rem;
 }
@@ -2147,8 +2142,8 @@ details summary{
 @keyframes slideDownAnimate {
   from{
     transform: translateY(-50%);
-    opacity: 0.5;
-    filter: blur(20px);
+    opacity: 0.8;
+    /* filter: blur(20px); */
   }
 
   to{
@@ -2410,8 +2405,8 @@ details summary{
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .md\:grid-rows-\[80svh\]{
-    grid-template-rows: 80svh;
+  .md\:grid-rows-\[60svh\]{
+    grid-template-rows: 60svh;
   }
 
   .md\:flex-row{

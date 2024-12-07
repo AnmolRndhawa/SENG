@@ -133,8 +133,8 @@ from{
 @keyframes slideDownAnimate {
     from{
         transform: translateY(-50%);
-        opacity: 0.5;
-        filter: blur(20px);
+        opacity: 0.8;
+        /* filter: blur(20px); */
         
     }
     to{
