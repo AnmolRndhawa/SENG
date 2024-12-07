@@ -97,7 +97,7 @@ headerHtml = `
 
         </nav>
 
-        <div class="absolute grid grid-rows-[1fr_1fr_1fr] text-lg inset-y-12 inset-x-0 py-28 m-auto justify-center items-center gap-12 md:hidden">
+        <div class="absolute grid grid-rows-[1fr_1fr_1fr] text-lg inset-y-12 inset-x-0 py-28 px-8 m-auto justify-start items-center gap-12 md:hidden">
             <a href="home.html" class="js-headerLinks border-b-2 border-b-gray-300" data-visibility="false"><span class="wordSpace">Home</span></a>
             <div class=" js-headerLinks flex flex-col border-b-2 border-b-gray-300" data-visibility="false"><span class="wordSpace">Shop</span>
             <ul class="flex flex-col pt-4 pb-12">
