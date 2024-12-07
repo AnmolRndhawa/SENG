@@ -141,11 +141,33 @@ document.querySelector('header').innerHTML = headerHtml;
         if (menuForPhone) menuForPhone.classList.toggle('hidden');
         const main = document.querySelector('main');
         if (main){
-               
-     main.classList.toggle('hidden');
+
+            let scrollValue = scrollToTop();
+
             
-        } 
-    }
+
+                if(main.classList.contains('hidden')){
+                    main.classList.remove('hidden');
+                }else if(scrollValue===1){
+                    setTimeout(()=>{
+                        main.classList.add('hidden');
+                    },500);
+                }
+           
+        } ;
+    };
+
+    // scroll to top function 
+    // scroll to top function 
+    function scrollToTop(){
+
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth" // Smooth scroll effect
+        });
+        return 1;
+    };
 
     const cartPannel = document.querySelector('.cartPannel');
     if (cartPannel) {
