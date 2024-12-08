@@ -59,8 +59,8 @@ headerHtml = `
                     </ul>
                     <ul class="flex flex-col gap-y-6">
                         <span class="text-black mt-12 "> About us :</span>
-                        <a href="#" class="sublinks text-2xl">Project</a>
-                        <a href="#" class="sublinks text-2xl">About US</a>
+                        <a href="myProject.html" class="sublinks text-2xl">Project</a>
+                        <a href="AboutUsPage.html" class="sublinks text-2xl">About US</a>
                         
                     
                     </ul>
@@ -110,8 +110,8 @@ headerHtml = `
             <div class="js-headerLinks flex flex-col border-b-2 border-b-gray-300" data-visibility="false"><span class="wordSpace">Menu</span>
             <ul class="flex flex-col pt-4 pb-12">
                       <li><a href="orderSummary.html">My Cart</a></li>
-                      <li><a href="">About Project</a></li>
-                      <li><a href="">About Us</a></li>
+                      <li><a href="myProject.html">About Project</a></li>
+                      <li><a href="AboutUsPage.html">About Us</a></li>
             </ul>
             </div>
         </div>
