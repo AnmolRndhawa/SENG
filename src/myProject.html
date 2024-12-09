@@ -62,7 +62,7 @@
    <div class="font-bold font-PopinsStyle text-sm content-center">Item <span class="massageAction">Added!</span></div>
 </div>
 
-    <span class="text-2xl min-w-[22rem] max-w-[25vw] px-8 py-2 sticky top-[80%] bg-black text-white my-auto flex items-center">
+    <span id="downloadBtn" class="text-2xl min-w-[22rem] max-w-[25vw] px-8 py-2 sticky top-[80%] bg-black text-white my-auto flex items-center cursor-pointer">
         <img class="h-[2ch] w-[2ch]" src="images/icons/cloud-arrow-down-svgrepo-com.svg" alt="img">
         Download Project File</span>
     
@@ -82,4 +82,17 @@
     <script type="module" src="01-index.js"></script> 
     <script type="module" src="02-cartScript.js"></script>
 </body>
+
+<script>
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+      // Create a link element
+      const link = document.createElement('a');
+      // Set the URL of the file
+      link.href = 'addOns/PROJECT REPORT1.do'; // Replace with your file URL
+      // Set the download attribute with a filename
+      link.download = 'ProjectReport.docx'; // Replace with the desired filename
+      // Trigger the download
+      link.click();
+    });
+    </script>
 </html>
